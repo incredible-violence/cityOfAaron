@@ -20,6 +20,7 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         // TESTING PLAYER CLASS
         Player playerOne = new Player();
         playerOne.setName("Bob Saget");
