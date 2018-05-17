@@ -2,7 +2,7 @@
  * Game class file for cityOfAaron
  * CIT_260
  * Spring 2018
- * Team: James Kennedy,
+ * Team: James Kennedy, Mallory Di Bartolo
  */
 package model;
 
@@ -15,8 +15,16 @@ import java.util.Objects;
  */
 public class Game implements Serializable {
     
+    /***********************
+     * Variables
+     **********************/
+    
     // private variables
     private Player thePlayer;
+    
+    /*******************
+     * Constructors
+     ******************/
     
     // default constructor 
     public Game() {
@@ -26,7 +34,11 @@ public class Game implements Serializable {
     public Game(Player thePlayer) {    
         this.thePlayer = thePlayer;
     }
-
+    
+    /***********************
+     * Getters and Setters
+     **********************/
+    
     // getter for thePlayer
     public Player getThePlayer() {
         return thePlayer;

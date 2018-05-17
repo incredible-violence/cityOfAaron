@@ -2,7 +2,7 @@
  * TeamMember enum file for cityOfAaron
  * CIT_260
  * Spring 2018
- * Team: James Kennedy,
+ * Team: James Kennedy, Mallory Di Bartolo
  */
 package model;
 
@@ -11,14 +11,48 @@ package model;
  * @author waabb
  */
 public enum TeamMember {
+    
+    Admin("James", "Administrator");
+    
+    /***********************
+     * Variables
+     **********************/
 
     // private variables
     private String name;
     private String title;
     
+    /*******************
+     * Constructors
+     ******************/
+    
+    // constructor 1: 2 arguements
     TeamMember(String name, String title) {
-    this.name = name;
-    this.title = title;
-}
-
+        this.name = name;
+        this.title = title;
+    }
+    
+    /***********************
+     * Getters and Setters
+     **********************/
+    
+    // getter: name
+    public String getName() {
+        return name;
+    }
+    
+    // setter: name
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    // getter: title
+    public String getTitle() {
+        return title;
+    }
+    
+    // setter: title
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

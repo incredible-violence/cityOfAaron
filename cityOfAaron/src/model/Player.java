@@ -2,7 +2,7 @@
  * Player class file for cityOfAaron
  * CIT_260
  * Spring 2018
- * Team: James Kennedy,
+ * Team: James Kennedy, Mallory Di Bartolo
  */
 package model;
 
@@ -15,15 +15,28 @@ import java.util.Objects;
  * @author waabb
  */
 public class Player implements Serializable {
+    
+    /***********************
+     * Variables
+     **********************/
+
     // Private Variable: 'name'
     private String name;
     
     // Array to store games
     private ArrayList<Game> games = new ArrayList<Game>();
     
+    /*******************
+     * Constructors
+     ******************/
+    
     // Default Constructor
     public Player() {
     }
+    
+    /***********************
+     * Getters and Setters
+     **********************/
     
     // name getter
     public String getName() {
