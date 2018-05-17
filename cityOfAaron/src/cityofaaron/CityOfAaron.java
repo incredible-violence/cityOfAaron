@@ -28,6 +28,15 @@ public class CityOfAaron {
         System.out.println("Name = " + playerOneName);
         // TESTING GET METHOD
         System.out.println(playerOne.getName());
+        
+        
+        //TESTING ENUM
+        String teamMemberName = TeamMember.Admin.getName();
+        String teamMemberTitle = TeamMember.Admin.getTitle();
+        System.out.println("Team Member Name: " + teamMemberName); 
+        System.out.println("Team Member Title: " + teamMemberTitle);
     }
+    
+    
     
 }
