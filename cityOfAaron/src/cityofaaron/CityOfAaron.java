@@ -6,6 +6,10 @@
  */
 package cityofaaron;
 
+import model.Player;
+import model.Game;
+import model.TeamMember;
+
 /**
  *
  * @author waabb
@@ -16,7 +20,14 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TESTING PLAYER CLASS
+        Player playerOne = new Player();
+        playerOne.setName("Bob Saget");
+        String playerOneName = playerOne.getName();
+        // TESTING SET METHOD
+        System.out.println("Name = " + playerOneName);
+        // TESTING GET METHOD
+        System.out.println(playerOne.getName());
     }
     
 }
