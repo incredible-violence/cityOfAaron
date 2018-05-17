@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Player class file for cityOfAaron
+ * CIT_260
+ * Spring 2018
+ * Team: James Kennedy,
  */
 package model;
 
