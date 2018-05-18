@@ -10,6 +10,7 @@ package cityofaaron;
 import model.Player;
 import model.Game;
 import model.TeamMember;
+import model.Location; 
 
 /**
  *
@@ -44,6 +45,15 @@ public class CityOfAaron {
         gameOne.setThePlayer(playerOne);
         System.out.println("Player of Game One: " + gameOne.getThePlayer());
         */
+        
+        //TESTING LOCATION CLASS
+        Location locationDescription = new Location();
+        locationDescription.setDescription("Mountain"); 
+        String locationDescriptionOne = locationDescription.getDescription();
+        //TESTING SET METHOD
+        System.out.println("Description = " + locationDescriptionOne); 
+        //TESTING GET METHOD
+        System.out.println(locationDescription.getDescription());
         
     }
 }
