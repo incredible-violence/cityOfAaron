@@ -21,6 +21,7 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         // TESTING PLAYER CLASS
         Player playerOne = new Player();
         playerOne.setName("Bob Saget");
@@ -31,14 +32,19 @@ public class CityOfAaron {
         System.out.println(playerOne.getName());
         
         
-        //TESTING ENUM
+        // TESTING ENUM
         String teamMemberName = TeamMember.Admin.getName();
         String teamMemberTitle = TeamMember.Admin.getTitle();
         System.out.println("Team Member Name: " + teamMemberName); 
         System.out.println("Team Member Title: " + teamMemberTitle);
+        
+        // TESTING GAME CLASS [WORK IN PROGRESS]
+        /*
+        Game gameOne = new Game();
+        gameOne.setThePlayer(playerOne);
+        System.out.println("Player of Game One: " + gameOne.getThePlayer());
+        */
+        
     }
-    
-    
-    
 }
 

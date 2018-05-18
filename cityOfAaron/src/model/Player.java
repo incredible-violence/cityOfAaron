@@ -84,6 +84,4 @@ public class Player implements Serializable {
         }
         return true;
     }
-    
-    
 }
