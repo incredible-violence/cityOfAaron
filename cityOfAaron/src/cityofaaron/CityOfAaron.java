@@ -24,7 +24,12 @@ public class CityOfAaron {
      */
     public static void main(String[] args) {
         
+        /****************************************
+         * CLASS TESTING METHODS
+         ***************************************/
+     
         // TESTING PLAYER CLASS
+        System.out.println("TESTING PLAYER CLASS");
         Player playerOne = new Player();
         playerOne.setName("Bob Saget");
         String playerOneName = playerOne.getName();
@@ -35,6 +40,7 @@ public class CityOfAaron {
         
         
         // TESTING ENUM
+        System.out.println("TESTING TEAMMEMBER ENUM");
         String teamMemberName = TeamMember.Admin.getName();
         String teamMemberTitle = TeamMember.Admin.getTitle();
         System.out.println("Team Member Name: " + teamMemberName); 
@@ -42,12 +48,14 @@ public class CityOfAaron {
         
         // TESTING GAME CLASS [WORK IN PROGRESS]
         /*
+        System.out.println("TESTING GAME CLASS");
         Game gameOne = new Game();
         gameOne.setThePlayer(playerOne);
         System.out.println("Player of Game One: " + gameOne.getThePlayer());
         */
         
         //TESTING LOCATION CLASS
+        System.out.println("TESTING LOCATION CLASS");
         Location locationDescription = new Location();
         locationDescription.setDescription("Mountain"); 
         String locationDescriptionOne = locationDescription.getDescription();
