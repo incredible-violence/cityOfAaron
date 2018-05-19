@@ -8,6 +8,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,7 +24,8 @@ public class Game implements Serializable {
     private Player thePlayer; 
     
     //Attempt at implementing the ListItem-Game relationship -Mallory 
-   // private ArrayList<ListItem> name = new ArrayList<ListItem>(); 
+    //private ArrayList<ListItem> name = new ArrayList<ListItem>(); 
+    //private ArrayList<ListItem> number = new ArrayList<ListItem>();
     
     /*******************
      * Constructors

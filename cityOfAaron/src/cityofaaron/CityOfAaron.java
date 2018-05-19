@@ -11,6 +11,7 @@ import model.Player;
 import model.Game;
 import model.TeamMember;
 import model.Location; 
+import model.ListItem; 
 
 /**
  *
@@ -56,14 +57,37 @@ public class CityOfAaron {
         
         //TESTING LOCATION CLASS
         System.out.println("TESTING LOCATION CLASS");
-        Location locationDescription = new Location();
-        locationDescription.setDescription("Mountain"); 
-        String locationDescriptionOne = locationDescription.getDescription();
+        Location location= new Location();
+        location.setDescription("Mountain"); 
+        String locationDescriptionOne = location.getDescription();
+        location.setSymbol("Mountain Symbol");
+        String locationSymbolOne = location.getSymbol(); 
         //TESTING SET METHOD
         System.out.println("Description = " + locationDescriptionOne); 
+        System.out.println("Symbol = " + locationSymbolOne);
         //TESTING GET METHOD
-        System.out.println(locationDescription.getDescription());
+        System.out.println(location.getDescription());
+        System.out.println(location.getSymbol());
+        
+        //TESTING ListItem CLASS
+        System.out.println("TESTING ListItem CLASS"); 
+        ListItem itemOne = new ListItem();
+        itemOne.setName("Item One"); 
+        String itemOneName = itemOne.getName(); 
+        itemOne.setNumber(1);
+        int itemOneNumber = itemOne.getNumber(); 
+        //TESTING SET METHOD
+        System.out.println("List Items: ");
+        System.out.println(itemOneNumber+ ". " + itemOneName); 
+        //TESTING GET METHOD
+        System.out.println(itemOne.getNumber());
+        System.out.println(itemOne.getName());
+        
         
     }
+    
+        
+        
+     
 }
 
