@@ -19,23 +19,26 @@ public class Location implements Serializable {
     private String description; 
     private String symbol; 
 
+    // Constructor
     public Location() {
     }
 
-    
-    
+    // getter: description
     public String getDescription() {
         return description;
     }
-
+    
+    // setter: description
     public void setDescription(String description) {
         this.description = description;
     }
-
+    
+    // getter: symbol
     public String getSymbol() {
         return symbol;
     }
 
+    // setter: symbol
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
@@ -52,7 +55,6 @@ public class Location implements Serializable {
     public String toString() {
         return "Location{" + "description=" + description + ", symbol=" + symbol + '}';
     }
-    
     
     @Override
     public boolean equals(Object obj) {

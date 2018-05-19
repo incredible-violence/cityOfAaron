@@ -11,7 +11,7 @@ import java.util.Objects;
 
 /**
  *
- * @author waabb
+ * @author jamesK
  */
 public class Game implements Serializable {
     

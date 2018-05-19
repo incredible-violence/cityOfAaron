@@ -8,7 +8,7 @@ package model;
 
 /**
  *
- * @author waabb
+ * @author jamesK
  */
 public enum TeamMember {
     

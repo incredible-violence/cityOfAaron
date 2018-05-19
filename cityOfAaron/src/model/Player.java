@@ -12,7 +12,7 @@ import java.util.Objects;
 
 /**
  *
- * @author waabb
+ * @author jamesK
  */
 public class Player implements Serializable {
     

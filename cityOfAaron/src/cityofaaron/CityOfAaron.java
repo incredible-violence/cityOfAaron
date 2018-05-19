@@ -14,8 +14,9 @@ import model.Location;
 
 /**
  *
- * @author waabb
+ * @author jamesK
  */
+
 public class CityOfAaron {
 
     /**
