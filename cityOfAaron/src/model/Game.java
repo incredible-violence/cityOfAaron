@@ -20,7 +20,10 @@ public class Game implements Serializable {
      **********************/
     
     // private variables
-    private Player thePlayer;
+    private Player thePlayer; 
+    
+    //Attempt at implementing the ListItem-Game relationship -Mallory 
+   // private ArrayList<ListItem> name = new ArrayList<ListItem>(); 
     
     /*******************
      * Constructors
