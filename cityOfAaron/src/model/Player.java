@@ -4,6 +4,7 @@
  * Spring 2018
  * Team: James Kennedy, Mallory Di Bartolo
  */
+
 package model;
 
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.Objects;
  *
  * @author jamesK
  */
+
 public class Player implements Serializable {
     
     /***********************

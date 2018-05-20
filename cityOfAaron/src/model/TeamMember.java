@@ -4,12 +4,14 @@
  * Spring 2018
  * Team: James Kennedy, Mallory Di Bartolo
  */
+
 package model;
 
 /**
  *
  * @author jamesK
  */
+
 public enum TeamMember {
     
     Admin("James", "Administrator");

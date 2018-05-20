@@ -5,13 +5,16 @@
  * Spring 2018
  * Team: James Kennedy,
  */
+
 package cityofaaron;
 
+import model.CropData;
 import model.Player;
 import model.Game;
 import model.TeamMember;
 import model.Location; 
 import model.ListItem; 
+import model.Map;
 
 /**
  *
@@ -47,7 +50,7 @@ public class CityOfAaron {
         System.out.println("Team Member Name: " + teamMemberName); 
         System.out.println("Team Member Title: " + teamMemberTitle);
         
-        // TESTING GAME CLASS [WORK IN PROGRESS]
+        // TESTING Game CLASS [WORK IN PROGRESS]
         /*
         System.out.println("TESTING GAME CLASS");
         Game gameOne = new Game();
@@ -55,7 +58,7 @@ public class CityOfAaron {
         System.out.println("Player of Game One: " + gameOne.getThePlayer());
         */
         
-        //TESTING LOCATION CLASS
+        // TESTING LOCATION CLASS
         System.out.println("TESTING LOCATION CLASS");
         Location location= new Location();
         location.setDescription("Mountain"); 
@@ -69,7 +72,7 @@ public class CityOfAaron {
         System.out.println(location.getDescription());
         System.out.println(location.getSymbol());
         
-        //TESTING ListItem CLASS
+        // TESTING ListItem CLASS
         System.out.println("TESTING ListItem CLASS"); 
         ListItem itemOne = new ListItem();
         itemOne.setName("Item One"); 
@@ -83,6 +86,22 @@ public class CityOfAaron {
         System.out.println(itemOne.getNumber());
         System.out.println(itemOne.getName());
         
+        // TESTING CropData Class via constructor
+        System.out.println("TESTING CROPDATA CLASS");
+        CropData cropdata = new CropData(2018, 1000, 1500, 200, 400, 1, 2, 
+                400, 250, 50, 20, 1000, 259, 56, 2, 50);
+        System.out.println("Year: " + cropdata.getYear());
+        System.out.println("Population: " + cropdata.getPopulation());
+        System.out.println("Acres Owned: " + cropdata.getAcresOwned());
+        System.out.println("Crop Yield: " + cropdata.getCropYield());
+        System.out.println("Wheat In Store: " + cropdata.getWheatInStore());
+        /* I'll add the rest later */
+        
+        // TESTING Map Class
+        System.out.println("TESTING MAP CLASS");
+        Map map = new Map(25, 25);
+        System.out.println("Row Count: " + map.getColCount());
+        System.out.println("Column Count: " + map.getRowCount());
         
     }
     

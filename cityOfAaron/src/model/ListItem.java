@@ -14,6 +14,7 @@ import java.util.Objects;
  *
  * @author mallorydibartolo
  */
+
 public class ListItem implements Serializable {
     
     //class instance variables
