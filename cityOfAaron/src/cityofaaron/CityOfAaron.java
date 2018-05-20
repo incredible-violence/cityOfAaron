@@ -87,7 +87,7 @@ public class CityOfAaron {
         System.out.println(itemOne.getName());
         
         // TESTING CropData Class via constructor
-        System.out.println("TESTING CROPDATA CLASS");
+        System.out.println("TESTING CROPDATA CLASS w/ CONSTRUCTOR");
         CropData cropdata = new CropData(2018, 1000, 1500, 200, 400, 1, 2, 
                 400, 250, 50, 20, 1000, 259, 56, 2, 50);
         System.out.println("Year: " + cropdata.getYear());
@@ -95,10 +95,20 @@ public class CityOfAaron {
         System.out.println("Acres Owned: " + cropdata.getAcresOwned());
         System.out.println("Crop Yield: " + cropdata.getCropYield());
         System.out.println("Wheat In Store: " + cropdata.getWheatInStore());
-        /* I'll add the rest later */
+        System.out.println("Number Who Died: " + cropdata.getNumberWhoDied());
+        System.out.println("New People: " + cropdata.getNewPeople());
+        System.out.println("Harvest: " + cropdata.getHarvest());
+        System.out.println("Harvest After Offering: " + cropdata.getHarvestAfterOffering());
+        System.out.println("Offering: " + cropdata.getOffering());
+        System.out.println("Offering in Bushels: " + cropdata.getOfferingBushels());
+        System.out.println("People Fed: " + cropdata.getPeopleFed());
+        System.out.println("Acres Planted: " + cropdata.getAcresPlanted());
+        System.out.println("Number Starved: " + cropdata.getNumStarved());
+        System.out.println("Eaten By Rats: " + cropdata.getEatenByRats());
+        System.out.println("Wheat for People: " + cropdata.getWheatForPeople());
         
         // TESTING Map Class
-        System.out.println("TESTING MAP CLASS");
+        System.out.println("TESTING MAP CLASS w/ CONSTRUCTOR");
         Map map = new Map(25, 25);
         System.out.println("Row Count: " + map.getColCount());
         System.out.println("Column Count: " + map.getRowCount());
