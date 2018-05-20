@@ -104,9 +104,6 @@ public class CityOfAaron {
         System.out.println("Column Count: " + map.getRowCount());
         
     }
-    
-        
-        
-     
+
 }
 
