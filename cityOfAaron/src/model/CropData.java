@@ -1,9 +1,9 @@
-/*
- * Game class file for cityOfAaron
+/*********************************************
+ * Class: CropData
  * CIT_260
  * Spring 2018
  * Team: James Kennedy, Mallory Di Bartolo
- */
+ ********************************************/
 
 package model;
 

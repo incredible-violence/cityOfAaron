@@ -1,10 +1,10 @@
 
-/*
- * Main class file for cityOfAaron
+/*********************************************
+ * Class: Main / CityOfAaron
  * CIT_260
  * Spring 2018
- * Team: James Kennedy,
- */
+ * Team: James Kennedy, Mallory Di Bartolo
+ ********************************************/
 
 package cityofaaron;
 

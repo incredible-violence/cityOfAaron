@@ -1,9 +1,9 @@
-/*
- * TeamMember enum file for cityOfAaron
+/*********************************************
+ * Class: TeamMember
  * CIT_260
  * Spring 2018
  * Team: James Kennedy, Mallory Di Bartolo
- */
+ ********************************************/
 
 package model;
 

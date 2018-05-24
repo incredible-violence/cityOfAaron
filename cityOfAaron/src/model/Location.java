@@ -1,9 +1,10 @@
-/*
- * Location class file for cityOfAaron
+/*********************************************
+ * Class: Location
  * CIT_260
  * Spring 2018
  * Team: James Kennedy, Mallory Di Bartolo
- */
+ ********************************************/
+
 package model;
 
 import java.io.Serializable;
