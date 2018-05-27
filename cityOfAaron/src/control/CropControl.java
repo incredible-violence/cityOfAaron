@@ -30,8 +30,7 @@ public class CropControl {
 
     public CropControl() {
     }
-    
-    
+        
     // Methods
     
     /**
@@ -63,7 +62,7 @@ public class CropControl {
         // else, add number of acres purchased to acres owned & subtract
         // price of land from wheatInStore
         
-        // return
+        // return new acresOwned Value
         return cropData.getAcresOwned();
     }
 
@@ -96,6 +95,19 @@ public class CropControl {
         
         // return acresOwned
         return cropData.getAcresOwned();
+    }
+    
+    public static int setOffering(int percent, CropData cropData) {
+        
+        // if percent > 0, multiply by harvest amount, divide by 100.
+        
+        
+        // set offeringAmount equal to offering in CropData object.
+        
+        int offeringAmount = (percent * cropData.getHarvest()) / 100;
+        cropData.setOffering(offeringAmount);
+        
+        return offeringAmount;
     }
     
     // getters and setters
