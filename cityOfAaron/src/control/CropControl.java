@@ -88,6 +88,7 @@ public class CropControl {
         // if acresToSell > acresOwned, return -1
         else if (acresToSell > acresOwned)
             return -1;
+        
         // if pre-conditions are met, this code block is executed
         else {
             // acresOwned - acresToSell
