@@ -79,33 +79,33 @@ public class CropControl {
      */
     public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
         
+        // acresOwned Variable
+        int acresOwned = cropData.getAcresOwned();
         // if acresToSell < 0, return -1
-        if(acresToSell < 0)
+        if (acresToSell < 0)
             return -1; 
         
         // if acresToSell > acresOwned, return -1
-        int acresOwned = cropData.getAcresOwned();
-        if(acresToSell > acresOwned)
-            return -1; 
+        else if (acresToSell > acresOwned)
+            return -1;
+        // if pre-conditions are met, this code block is executed
+        else {
+            // acresOwned - acresToSell
+            acresOwned -= acresToSell;
         
-        // acresOwned - acresToSell
-        acresOwned -= acresToSell;
+            // save the new acresOwned amount
+            cropData.setAcresOwned(acresOwned);
         
-        // save the new acresOwned amount
-        cropData.setAcresOwned(acresOwned);
+            // wheatInStore = wheatInStore + (acresToSell * landPrice)
+            int wheatInStore = cropData.getWheatInStore();
+            wheatInStore += (acresToSell * landPrice);
         
-        // wheatInStore = wheatInStore + (acresToSell * landPrice)
-        int wheatInStore = cropData.getWheatInStore();
-        wheatInStore += (acresToSell * landPrice);
-        
-   
-        
-        
-        // save result to wheatInStore
-        cropData.setWheatInStore(wheatInStore);
+            // save result to wheatInStore
+            cropData.setWheatInStore(wheatInStore);
          
-        // return acresOwned
-        return cropData.getAcresOwned();
+            // return acresOwned
+            return cropData.getAcresOwned();
+        }
     }
     
     public static int setOffering(int percent, CropData cropData) {
