@@ -9,6 +9,7 @@ package control;
 
 import model.CropData;
 import model.Game;
+import java.util.Random; 
 
 /**
  *
@@ -25,6 +26,20 @@ public class CropControl {
     private static int YIELD_RANGE;
     private static Game theGame;
     private static CropData cropData;
+    
+    /* -------RANDOM NUMBER GENERATOR- I gave it my best shot. I'm not sure if it goes here though
+    //constants
+    private static final int LAND_BASE = 17; 
+    private static final int LAND_RANGE = 11; 
+   
+    //random number generator
+    private static Random random = new Random(); 
+    
+    public static int calcLandPrice() {
+        int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;
+        return landPrice;
+    }
+    */
     
     // Constructors
 
@@ -47,13 +62,19 @@ public class CropControl {
     */
     public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
         
+        
         // generate random number between 17 and 27 for landPrice
+        //int price = new calcLandPrice(); 
         
         // Ask user how many acres they want to buy
-        
+        //System.out.println("How many acres of new land do you want to buy?");
         // User input
+        //int acresToBuy = 
         
         // if acresToBuy < 0, ERROR, ask again
+        //if(acresToBuy < 0) {
+            
+        //}
         
         // if wheatInStore < totalPrice, ERROR, ask again
         
