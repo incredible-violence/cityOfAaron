@@ -178,6 +178,80 @@ public class CropControl {
         }
     }
     
+    /**
+    *Method: feedPeople
+    *Purpose: feed the people
+    *@param wheatForPeople
+    *@param CropData.wheatInStore
+    *@return CropData.wheatInStore
+    *@return wheatForPeople
+    *Pre-Conditions:
+    *-wheatForPeople must be a positive number
+    *-wheatInStore > wheatForPeople
+    */
+
+    public static int feedPeople(int wheatForPeople, CropData cropData){
+        int wheatInStore = cropData.getWheatInStore(); 
+        
+        if(wheatForPeople < 0) {
+            return -1; 
+        }
+        
+        if(wheatForPeople < wheatInStore) {
+            return -1; 
+        }
+         
+        else {
+            wheatInStore -= wheatForPeople; 
+            cropData.setWheatInStore(wheatInStore);
+            cropData.setWheatForPeople(wheatForPeople);
+        }
+        
+        return cropData.getWheatInStore(); 
+        
+    }
+    
+    /**
+    *Method: plantCrops
+    *Purpose: plant crops
+    *@param landToPlant
+    *@param cropData.wheatInStore
+    *@return acresPlanted
+    *@return cropData.wheatInStore
+    *Pre-Conditions:
+    *-landToPlant >= 0
+    *-landToPlant <= CropData.acresOwned
+    *-landToPlant <= CropData.wheatInStore / 2
+    */
+    
+    public static int plantCrops(int landToPlant, CropData cropData) {
+        int acresOwned = cropData.getAcresOwned(); 
+        int wheatInStore = cropData.getWheatInStore();
+        
+        if(landToPlant < 0){
+            return -1; 
+        }
+        
+        if(landToPlant < acresOwned){
+            return -1; 
+        }
+        
+        if(landToPlant > (wheatInStore / 2) ){
+            return -1;
+        }
+        
+        else {
+            int wheatRequired = landToPlant / 2; 
+            wheatInStore -= wheatRequired;
+            cropData.setWheatInStore(wheatInStore);
+        }
+        
+        return cropData.getWheatInStore(); 
+        
+        
+        
+    }
+
     // getters and setters
 
     public static int getACRES_PER_BUSHEL() {

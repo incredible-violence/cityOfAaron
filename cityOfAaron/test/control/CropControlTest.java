@@ -237,11 +237,13 @@ public class CropControlTest {
         assertEquals(expResult, result);
         
     }
+    
+    
 
     /**
      * Test of setOffering method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testSetOffering() {
         System.out.println("setOffering");
         int percent = 0;
@@ -251,12 +253,12 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of getACRES_PER_BUSHEL method, of class CropControl.
      */
-    @Test
+   /* @Test
     public void testGetACRES_PER_BUSHEL() {
         System.out.println("getACRES_PER_BUSHEL");
         int expResult = 0;
@@ -264,24 +266,24 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of setACRES_PER_BUSHEL method, of class CropControl.
      */
-    @Test
+   /* @Test
     public void testSetACRES_PER_BUSHEL() {
         System.out.println("setACRES_PER_BUSHEL");
         int ACRES_PER_BUSHEL = 0;
         CropControl.setACRES_PER_BUSHEL(ACRES_PER_BUSHEL);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of getPEOPLE_PER_ACRE method, of class CropControl.
      */
-    @Test
+   /* @Test
     public void testGetPEOPLE_PER_ACRE() {
         System.out.println("getPEOPLE_PER_ACRE");
         int expResult = 0;
@@ -289,24 +291,24 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
       
-    }
+    }*/
 
     /**
      * Test of setPEOPLE_PER_ACRE method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testSetPEOPLE_PER_ACRE() {
         System.out.println("setPEOPLE_PER_ACRE");
         int PEOPLE_PER_ACRE = 0;
         CropControl.setPEOPLE_PER_ACRE(PEOPLE_PER_ACRE);
         // TODO review the generated test code and remove the default call to fail.
         
-    }
+    }*/
 
     /**
      * Test of getYIELD_BASE method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testGetYIELD_BASE() {
         System.out.println("getYIELD_BASE");
         int expResult = 0;
@@ -314,24 +316,24 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         
-    }
+    }*/
 
     /**
      * Test of setYIELD_BASE method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testSetYIELD_BASE() {
         System.out.println("setYIELD_BASE");
         int YIELD_BASE = 0;
         CropControl.setYIELD_BASE(YIELD_BASE);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of getYIELD_RANGE method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testGetYIELD_RANGE() {
         System.out.println("getYIELD_RANGE");
         int expResult = 0;
@@ -339,24 +341,24 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
      
-    }
+    }*/
 
     /**
      * Test of setYIELD_RANGE method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testSetYIELD_RANGE() {
         System.out.println("setYIELD_RANGE");
         int YIELD_RANGE = 0;
         CropControl.setYIELD_RANGE(YIELD_RANGE);
         // TODO review the generated test code and remove the default call to fail.
         
-    }
+    }*/
 
     /**
      * Test of getTheGame method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testGetTheGame() {
         System.out.println("getTheGame");
         Game expResult = null;
@@ -364,24 +366,24 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of setTheGame method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testSetTheGame() {
         System.out.println("setTheGame");
         Game theGame = null;
         CropControl.setTheGame(theGame);
         // TODO review the generated test code and remove the default call to fail.
         
-    }
+    }*/
 
     /**
      * Test of getCropData method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testGetCropData() {
         System.out.println("getCropData");
         CropData expResult = null;
@@ -389,24 +391,24 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of setCropData method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testSetCropData() {
         System.out.println("setCropData");
         CropData cropData = null;
         CropControl.setCropData(cropData);
         // TODO review the generated test code and remove the default call to fail.
         
-    }
+    }*/
 
     /**
      * Test of toString method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testToString() {
         System.out.println("toString");
         CropControl instance = new CropControl();
@@ -415,12 +417,12 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
-    }
+    }*/
 
     /**
      * Test of calcLandPrice method, of class CropControl.
      */
-    @Test
+    /*@Test
     public void testCalcLandPrice() {
         System.out.println("calcLandPrice");
         int expResult = 0;
@@ -428,6 +430,6 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
+    }*/
     
 }
