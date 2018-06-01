@@ -8,9 +8,11 @@ package control;
 import model.CropData;
 import model.Game;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.BeforeClass;
 
 /**
  *
@@ -19,6 +21,14 @@ import static org.junit.Assert.*;
 public class CropControlTest {
     
     public CropControlTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
     }
     
     @Before
@@ -313,6 +323,19 @@ public class CropControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
+    }
+
+    /**
+     * Test of calcLandPrice method, of class CropControl.
+     */
+    @Test
+    public void testCalcLandPrice() {
+        System.out.println("calcLandPrice");
+        int expResult = 0;
+        int result = CropControl.calcLandPrice();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
     
 }

@@ -9,7 +9,8 @@ package control;
 
 import model.CropData;
 import model.Game;
-import java.util.Random; 
+import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -26,27 +27,29 @@ public class CropControl {
     private static int YIELD_RANGE;
     private static Game theGame;
     private static CropData cropData;
-    
-    /* -------RANDOM NUMBER GENERATOR- I gave it my best shot. I'm not sure if it goes here though
-    //constants
-    private static final int LAND_BASE = 17; 
-    private static final int LAND_RANGE = 11; 
-   
-    //random number generator
-    private static Random random = new Random(); 
-    
-    public static int calcLandPrice() {
-        int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;
-        return landPrice;
-    }
-    */
-    
+      
     // Constructors
 
     public CropControl() {
     }
         
     // Methods
+    
+    /**
+     * Method: calcLandPrice
+     * Purpose: Generates a random number for the price of land
+     * @return landPrice
+     */
+    public static int calcLandPrice() {
+        
+        Random random = new Random(); 
+         //constants
+        int LAND_BASE = 17; 
+        int LAND_RANGE = 11; 
+        int landPrice = random.nextInt(LAND_RANGE) + LAND_BASE;
+        
+        return landPrice;
+    }
     
     /**
     * Method: buyLand
@@ -62,26 +65,30 @@ public class CropControl {
     */
     public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
         
-        
         // generate random number between 17 and 27 for landPrice
-        //int price = new calcLandPrice(); 
+        int price = calcLandPrice();
         
-        // Ask user how many acres they want to buy
-        //System.out.println("How many acres of new land do you want to buy?");
-        // User input
-        //int acresToBuy = 
+        // acresToBuy = amount of land the user wants to buy
         
-        // if acresToBuy < 0, ERROR, ask again
-        //if(acresToBuy < 0) {
-            
-        //}
+        // if acresToBuy < 0, ERROR
+        if (acresToBuy < 0)
+            return -1;
         
-        // if wheatInStore < totalPrice, ERROR, ask again
+        int totalPrice = acresToBuy * price;
+        
+        // if wheatInStore < totalPrice, ERROR
+        if (cropData.getWheatInStore() < totalPrice)
+            return -1;
         
         // if population <= (oldAcres + newAcres) / 10, ERROR, ask again
+        if (cropData.getPopulation() <= (cropData.getAcresOwned() + acresToBuy) / 10)
+            return -1;
         
-        // else, add number of acres purchased to acres owned & subtract
-        // price of land from wheatInStore
+        // else, add number of acres purchased to acres owned
+        cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
+        
+        // subtract price from WheatInStore
+        cropData.setWheatInStore(cropData.getWheatInStore() - totalPrice);
         
         // return new acresOwned Value
         return cropData.getAcresOwned();
@@ -102,32 +109,32 @@ public class CropControl {
         
         // acresOwned Variable
         int acresOwned = cropData.getAcresOwned();
+        
         // if acresToSell < 0, return -1
         if (acresToSell < 0)
             return -1; 
         
         // if acresToSell > acresOwned, return -1
-        else if (acresToSell > acresOwned)
+        if (acresToSell > acresOwned)
             return -1;
         
         // if pre-conditions are met, this code block is executed
-        else {
-            // acresOwned - acresToSell
-            acresOwned -= acresToSell;
+
+        // acresOwned - acresToSell
+        acresOwned -= acresToSell;
         
-            // save the new acresOwned amount
-            cropData.setAcresOwned(acresOwned);
+        // save the new acresOwned amount
+        cropData.setAcresOwned(acresOwned);
         
-            // wheatInStore = wheatInStore + (acresToSell * landPrice)
-            int wheatInStore = cropData.getWheatInStore();
-            wheatInStore += (acresToSell * landPrice);
+        // wheatInStore = wheatInStore + (acresToSell * landPrice)
+        int wheatInStore = cropData.getWheatInStore();
+        wheatInStore += (acresToSell * landPrice);
         
-            // save result to wheatInStore
-            cropData.setWheatInStore(wheatInStore);
+        // save result to wheatInStore
+        cropData.setWheatInStore(wheatInStore);
          
-            // return acresOwned
-            return cropData.getAcresOwned();
-        }
+       // return acresOwned
+       return cropData.getAcresOwned();
     }
     
     public static int setOffering(int percent, CropData cropData) {
