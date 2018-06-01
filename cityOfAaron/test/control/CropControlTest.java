@@ -46,14 +46,105 @@ public class CropControlTest {
     @Test
     public void testBuyLand() {
         System.out.println("buyLand");
-        int landPrice = 0;
-        int acresToBuy = 0;
-        CropData cropData = null;
-        int expResult = 0;
+        
+         // --- Test case 1 --- 
+        System.out.println("\tTest case 1");
+        
+        //define the input variables
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(30000);
+        cropData.setPopulation(300);
+        cropData.setAcresOwned(2500); 
+        int landPrice = 20;
+        int acresToBuy = 500;
+       
+        int expResult = 3000;
         int result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
+        
+         // --- Test case 2 --- 
+        System.out.println("\tTest case 2");
+        
+        //define the input variables
+        cropData.setWheatInStore(30000);
+        cropData.setPopulation(300);
+        cropData.setAcresOwned(2500); 
+        landPrice = 20;
+        acresToBuy = -500;
        
+        expResult = -1;
+        result = CropControl.buyLand(landPrice, acresToBuy, cropData);
+        assertEquals(expResult, result);
+      
+        // --- Test case 3 --- 
+        System.out.println("\tTest case 3");
+        
+        //define the input variables
+        cropData.setWheatInStore(9000);
+        cropData.setPopulation(400);
+        cropData.setAcresOwned(2500); 
+        landPrice = 20;
+        acresToBuy = 500;
+       
+        expResult = -1;
+        result = CropControl.buyLand(landPrice, acresToBuy, cropData);
+        assertEquals(expResult, result);
+        
+        // --- Test case 4 --- 
+        System.out.println("\tTest case 4");
+        
+        //define the input variables
+        cropData.setWheatInStore(10000);
+        cropData.setPopulation(200);
+        cropData.setAcresOwned(3000); 
+        landPrice = 20;
+        acresToBuy = 300;
+       
+        expResult = -1;
+        result = CropControl.buyLand(landPrice, acresToBuy, cropData);
+        assertEquals(expResult, result);
+        
+        // --- Test case 5 --- 
+        System.out.println("\tTest case 5");
+        
+        //define the input variables
+        cropData.setWheatInStore(10000);
+        cropData.setPopulation(400);
+        cropData.setAcresOwned(3000); 
+        landPrice = 20;
+        acresToBuy = 0;
+       
+        expResult = 3000;
+        result = CropControl.buyLand(landPrice, acresToBuy, cropData);
+        assertEquals(expResult, result);
+       
+        // --- Test case 6 --- 
+        System.out.println("\tTest case 6");
+        
+        //define the input variables
+        cropData.setWheatInStore(4000);
+        cropData.setPopulation(400);
+        cropData.setAcresOwned(3000); 
+        landPrice = 20;
+        acresToBuy = 200;
+       
+        expResult = 3200;
+        result = CropControl.buyLand(landPrice, acresToBuy, cropData);
+        assertEquals(expResult, result);
+        
+        // --- Test case 7 --- 
+        System.out.println("\tTest case 7");
+        
+        //define the input variables
+        cropData.setWheatInStore(15000);
+        cropData.setPopulation(300);
+        cropData.setAcresOwned(2500); 
+        landPrice = 20;
+        acresToBuy = 500;
+       
+        expResult = 3000;
+        result = CropControl.buyLand(landPrice, acresToBuy, cropData);
+        assertEquals(expResult, result);
     }
 
     /**
