@@ -35,13 +35,31 @@ public class CropControl {
         
     // Methods
     
+    
+    /**
+     * Method: calcLandPrice [using parameters]
+     * Purpose: return a random number with number range of parameters
+     * @param min
+     * @param max
+     * @return landPrice
+     */
+    public static int calcLandPrice(int min, int max) {
+        
+        // Random number generator
+        Random random = new Random();
+        // Generate random number using parameters
+        int landPrice = random.nextInt(max) + min;
+        // Return result
+        return landPrice;
+    }
+    
     /**
      * Method: calcLandPrice
      * Purpose: Generates a random number for the price of land
      * @return landPrice
      */
     public static int calcLandPrice() {
-        
+  
         Random random = new Random(); 
          //constants
         int LAND_BASE = 17; 
@@ -66,7 +84,11 @@ public class CropControl {
     public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
         
         // generate random number between 17 and 27 for landPrice
-        int price = calcLandPrice();
+        // int price = calcLandPrice();
+        int totalPrice = acresToBuy * landPrice;
+        /* Alternate method using other random number generator
+        int price = calcLandPrice(17, 27);
+        */
         
         // acresToBuy = amount of land the user wants to buy
         
@@ -74,15 +96,17 @@ public class CropControl {
         if (acresToBuy < 0)
             return -1;
         
-        int totalPrice = acresToBuy * price;
-        
         // if wheatInStore < totalPrice, ERROR
         if (cropData.getWheatInStore() < totalPrice)
             return -1;
         
         // if population <= (oldAcres + newAcres) / 10, ERROR, ask again
-        if (cropData.getPopulation() <= (cropData.getAcresOwned() + acresToBuy) / 10)
+        if (cropData.getPopulation() <= (cropData.getAcresOwned() + acresToBuy) / 100)
             return -1;
+        
+        if (acresToBuy == 0) {
+            return cropData.getAcresOwned();
+        }
         
         // else, add number of acres purchased to acres owned
         cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
@@ -119,35 +143,39 @@ public class CropControl {
             return -1;
         
         // if pre-conditions are met, this code block is executed
-
+        
         // acresOwned - acresToSell
         acresOwned -= acresToSell;
         
-        // save the new acresOwned amount
+        // save the new acresOwned amount            
         cropData.setAcresOwned(acresOwned);
         
         // wheatInStore = wheatInStore + (acresToSell * landPrice)
         int wheatInStore = cropData.getWheatInStore();
         wheatInStore += (acresToSell * landPrice);
-        
+       
         // save result to wheatInStore
         cropData.setWheatInStore(wheatInStore);
          
-       // return acresOwned
-       return cropData.getAcresOwned();
+        // return acresOwned
+        return cropData.getAcresOwned(); 
     }
     
     public static int setOffering(int percent, CropData cropData) {
         
-        // if percent > 0, multiply by harvest amount, divide by 100.
+        if (percent > 0) {
+            int offering = (percent * cropData.getWheatInStore()) / 100;
+            cropData.setOffering(offering);
+            return offering;
+        }
         
+        if (percent == 0) {
+            return 0;            
+        }
         
-        // set offeringAmount equal to offering in CropData object.
-        
-        int offeringAmount = (percent * cropData.getHarvest()) / 100;
-        cropData.setOffering(offeringAmount);
-        
-        return offeringAmount;
+        else {
+            return -1;
+        }
     }
     
     // getters and setters
