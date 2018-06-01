@@ -238,8 +238,204 @@ public class CropControlTest {
         
     }
     
-    
+    /**
+     * Test of feedPeople method, of class CropControl
+     */
+    @Test
+    public void testFeedPeople() {
+        System.out.println("feedPeople");
+        
+        // --- Test case 1 --- 
+        System.out.println("\tTest case 1");
+        
+        //define the input variables
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(5000);
+        int wheatForPeople = 4500; 
+        int expResult = 500;
+        
+        //call the method
+        int result = CropControl.feedPeople(wheatForPeople, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 2 --- 
+        System.out.println("\tTest case 2");
+        
+        //define the input variables
+        cropData.setWheatInStore(5000);
+        wheatForPeople = -500; 
+        expResult = -1;
+        
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 3 --- 
+        System.out.println("\tTest case 3");
+        
+        //define the input variables
+        cropData.setWheatInStore(3000);
+        wheatForPeople = 5000; 
+        expResult = -1;
+        
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 4--- 
+        System.out.println("\tTest case 4");
+        
+        //define the input variables
+        cropData.setWheatInStore(3000);
+        wheatForPeople = 0; 
+        expResult = 3000;
+        
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 5 --- 
+        System.out.println("\tTest case 5");
+        
+        //define the input variables
+        cropData.setWheatInStore(3000);
+        wheatForPeople = 3000; 
+        expResult = 0;
+        
+        //call the method
+        result = CropControl.feedPeople(wheatForPeople, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+    }
 
+    /**
+     * Test of plantCrops method, of class CropControl
+     */
+    
+    @Test
+    public void testPlantCrops() {
+        System.out.println("plantCrops");
+        
+        // --- Test case 1 --- 
+        System.out.println("\tTest case 1");
+        
+        //define the input variables
+        CropData cropData = new CropData();
+        cropData.setWheatInStore(900);
+        cropData.setAcresOwned(500);
+        int landToPlant = 300; 
+        int expResult = 750;
+        
+        //call the method
+        int result = CropControl.plantCrops(landToPlant, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 2 --- 
+        System.out.println("\tTest case 2");
+        
+        //define the input variables
+        cropData.setWheatInStore(900);
+        cropData.setAcresOwned(500);
+        landToPlant = -10; 
+        expResult = -1;
+        
+        //call the method
+        result = CropControl.plantCrops(landToPlant, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 3 --- 
+        System.out.println("\tTest case 3");
+        
+        //define the input variables
+        cropData.setWheatInStore(100);
+        cropData.setAcresOwned(500);
+        landToPlant = 400; 
+        expResult = -1;
+        
+        //call the method
+        result = CropControl.plantCrops(landToPlant, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 4 --- 
+        System.out.println("\tTest case 4");
+        
+        //define the input variables
+        cropData.setWheatInStore(300);
+        cropData.setAcresOwned(300);
+        landToPlant = 500; 
+        expResult = -1;
+        
+        //call the method
+        result = CropControl.plantCrops(landToPlant, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+        // --- Test case 5 --- 
+        System.out.println("\tTest case 5");
+        
+        //define the input variables
+        cropData.setWheatInStore(300);
+        cropData.setAcresOwned(300);
+        landToPlant = 0; 
+        expResult = 300;
+        
+        //call the method
+        result = CropControl.plantCrops(landToPlant, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+         // --- Test case 6 --- 
+        System.out.println("\tTest case 6");
+        
+        //define the input variables
+        cropData.setWheatInStore(500);
+        cropData.setAcresOwned(300);
+        landToPlant = 300; 
+        expResult = 350;
+        
+        //call the method
+        result = CropControl.plantCrops(landToPlant, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+         // --- Test case 7 --- 
+        System.out.println("\tTest case 7");
+        
+        //define the input variables
+        cropData.setWheatInStore(100);
+        cropData.setAcresOwned(500);
+        landToPlant = 200; 
+        expResult = 0;
+        
+        //call the method
+        result = CropControl.plantCrops(landToPlant, cropData);
+        
+        //test to see if the result returned equals the expected result
+        assertEquals(expResult, result);
+        
+    }
+    
+    
+    
+    
     /**
      * Test of setOffering method, of class CropControl.
      */
