@@ -95,18 +95,20 @@ public class CropControl {
         // if acresToBuy < 0, ERROR
         if (acresToBuy < 0)
             return -1;
-        
+        /*
         // if wheatInStore < totalPrice, ERROR
         if (cropData.getWheatInStore() < totalPrice)
             return -1;
-        
+        */
+        /*
         // if population <= (oldAcres + newAcres) / 10, ERROR, ask again
         if (cropData.getPopulation() <= (cropData.getAcresOwned() + acresToBuy) / 100)
             return -1;
-        
+        */
         if (acresToBuy == 0) {
             return cropData.getAcresOwned();
         }
+        
         
         // else, add number of acres purchased to acres owned
         cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
@@ -179,77 +181,67 @@ public class CropControl {
     }
     
     /**
-    *Method: feedPeople
-    *Purpose: feed the people
-    *@param wheatForPeople
-    *@param CropData.wheatInStore
-    *@return CropData.wheatInStore
-    *@return wheatForPeople
-    *Pre-Conditions:
-    *-wheatForPeople must be a positive number
-    *-wheatInStore > wheatForPeople
+    * Method: feedPeople
+    * Purpose: feed the people
+    * @param wheatForPeople
+    * @param cropData
+    * @return CropData.wheatInStore
+    * Pre-Conditions:
+    *  -wheatForPeople must be a positive number
+    *  -wheatInStore > wheatForPeople
     */
-
     public static int feedPeople(int wheatForPeople, CropData cropData){
+        
         int wheatInStore = cropData.getWheatInStore(); 
         
-        if(wheatForPeople < 0) {
-            return -1; 
-        }
-        
-        if(wheatForPeople < wheatInStore) {
-            return -1; 
-        }
-         
-        else {
-            wheatInStore -= wheatForPeople; 
-            cropData.setWheatInStore(wheatInStore);
-            cropData.setWheatForPeople(wheatForPeople);
-        }
-        
-        return cropData.getWheatInStore(); 
-        
-    }
-    
-    /**
-    *Method: plantCrops
-    *Purpose: plant crops
-    *@param landToPlant
-    *@param cropData.wheatInStore
-    *@return acresPlanted
-    *@return cropData.wheatInStore
-    *Pre-Conditions:
-    *-landToPlant >= 0
-    *-landToPlant <= CropData.acresOwned
-    *-landToPlant <= CropData.wheatInStore / 2
-    */
-    
-    public static int plantCrops(int landToPlant, CropData cropData) {
-        int acresOwned = cropData.getAcresOwned(); 
-        int wheatInStore = cropData.getWheatInStore();
-        
-        if(landToPlant < 0){
-            return -1; 
-        }
-        
-        if(landToPlant < acresOwned){
-            return -1; 
-        }
-        
-        if(landToPlant > (wheatInStore / 2) ){
+        if (wheatForPeople < 0) {
             return -1;
         }
         
-        else {
+        if (wheatForPeople < wheatInStore) {
+            wheatInStore -= wheatForPeople; 
+            cropData.setWheatInStore(wheatInStore);
+            cropData.setWheatForPeople(wheatForPeople);
+            return cropData.getWheatInStore();
+        }
+        
+        if (wheatInStore < wheatForPeople) {
+            return -1;
+        }
+        
+        return 0;
+    }
+    
+    /**
+    * Method: plantCrops
+    * Purpose: plant crops
+    * @param landToPlant
+    * @param cropData.wheatInStore
+    * @return cropData.getWheatInStore()
+    * Pre-Conditions:
+    * -landToPlant >= 0
+    * -landToPlant <= CropData.acresOwned
+    * -landToPlant <= CropData.wheatInStore / 2
+    */
+    public static int plantCrops(int landToPlant, CropData cropData) {
+        
+        int acresOwned = cropData.getAcresOwned(); 
+        int wheatInStore = cropData.getWheatInStore();
+       
+    
+        if (landToPlant < 0) { return -1; }
+        
+        if (landToPlant == 0) { return wheatInStore; }
+        
+       /* if (landToPlant < acresOwned) { return -1; } */
+        
+        if ((landToPlant / 2) < wheatInStore) {
             int wheatRequired = landToPlant / 2; 
             wheatInStore -= wheatRequired;
             cropData.setWheatInStore(wheatInStore);
+            return cropData.getWheatInStore();
         }
-        
-        return cropData.getWheatInStore(); 
-        
-        
-        
+        return 0;
     }
 
     // getters and setters

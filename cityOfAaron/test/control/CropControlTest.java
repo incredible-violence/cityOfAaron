@@ -40,9 +40,12 @@ public class CropControlTest {
     public void tearDown() {
     }
 
+  
     /**
      * Test of buyLand method, of class CropControl.
      */
+    
+    /*
     @Test
     public void testBuyLand() {
         System.out.println("buyLand");
@@ -146,7 +149,7 @@ public class CropControlTest {
         result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
     }
-
+*/
     /**
      * Test of sellLand method, of class CropControl.
      */
@@ -243,6 +246,7 @@ public class CropControlTest {
      */
     @Test
     public void testFeedPeople() {
+        
         System.out.println("feedPeople");
         
         // --- Test case 1 --- 
@@ -323,6 +327,7 @@ public class CropControlTest {
     
     @Test
     public void testPlantCrops() {
+        
         System.out.println("plantCrops");
         
         // --- Test case 1 --- 
@@ -439,18 +444,19 @@ public class CropControlTest {
     /**
      * Test of setOffering method, of class CropControl.
      */
-    /*@Test
+    /*
+    @Test
     public void testSetOffering() {
         System.out.println("setOffering");
         int percent = 0;
-        CropData cropData = null;
+        CropData cropData = new CropData();
         int expResult = 0;
         int result = CropControl.setOffering(percent, cropData);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        
-    }*/
-
+    }
+    */
     /**
      * Test of getACRES_PER_BUSHEL method, of class CropControl.
      */
