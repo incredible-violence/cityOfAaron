@@ -233,7 +233,7 @@ public class CropControl {
         
         if (landToPlant == 0) { return wheatInStore; }
         
-       /* if (landToPlant < acresOwned) { return -1; } */
+        if (landToPlant > acresOwned) { return -1; } 
         
         if ((landToPlant / 2) < wheatInStore) {
             int wheatRequired = landToPlant / 2; 
@@ -241,7 +241,10 @@ public class CropControl {
             cropData.setWheatInStore(wheatInStore);
             return cropData.getWheatInStore();
         }
-        return 0;
+        
+        if ((landToPlant / 2) == wheatInStore) { return 0; }
+        
+        return -1;
     }
 
     // getters and setters
