@@ -44,8 +44,6 @@ public class CropControlTest {
     /**
      * Test of buyLand method, of class CropControl.
      */
-    
-   
     @Test
     public void testBuyLand() {
         System.out.println("buyLand");
@@ -324,7 +322,6 @@ public class CropControlTest {
     /**
      * Test of plantCrops method, of class CropControl
      */
-    
     @Test
     public void testPlantCrops() {
         
@@ -444,7 +441,6 @@ public class CropControlTest {
     /**
      * Test of setOffering method, of class CropControl.
      */
-    /*
     @Test
     public void testSetOffering() {
         System.out.println("setOffering");
@@ -456,7 +452,7 @@ public class CropControlTest {
         // TODO review the generated test code and remove the default call to fail.
        
     }
-    */
+    
     /**
      * Test of getACRES_PER_BUSHEL method, of class CropControl.
      */
