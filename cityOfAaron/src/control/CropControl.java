@@ -83,41 +83,29 @@ public class CropControl {
     */
     public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
         
-        // generate random number between 17 and 27 for landPrice
-        // int price = calcLandPrice();
         int totalPrice = acresToBuy * landPrice;
-        /* Alternate method using other random number generator
-        int price = calcLandPrice(17, 27);
-        */
-        
-        // acresToBuy = amount of land the user wants to buy
-        
+                
         // if acresToBuy < 0, ERROR
-        if (acresToBuy < 0)
-            return -1;
-        /*
+        if (acresToBuy < 0) { return -1; }
+        
         // if wheatInStore < totalPrice, ERROR
-        if (cropData.getWheatInStore() < totalPrice)
-            return -1;
-        */
-        /*
-        // if population <= (oldAcres + newAcres) / 10, ERROR, ask again
-        if (cropData.getPopulation() <= (cropData.getAcresOwned() + acresToBuy) / 100)
-            return -1;
-        */
-        if (acresToBuy == 0) {
+        if (cropData.getWheatInStore() < totalPrice) { return -1; }
+        
+        // if population <= (oldAcres + newAcres) / 10, ERROR
+        if ((cropData.getPopulation() * 10) < (cropData.getAcresOwned() + acresToBuy)) { return -1; }
+        
+        if (acresToBuy == 0) { return cropData.getAcresOwned(); }
+        
+        else {
+            // else, add number of acres purchased to acres owned
+            cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
+        
+            // subtract price from WheatInStore
+            cropData.setWheatInStore(cropData.getWheatInStore() - totalPrice);
+        
+            // return new acresOwned Value
             return cropData.getAcresOwned();
         }
-        
-        
-        // else, add number of acres purchased to acres owned
-        cropData.setAcresOwned(cropData.getAcresOwned() + acresToBuy);
-        
-        // subtract price from WheatInStore
-        cropData.setWheatInStore(cropData.getWheatInStore() - totalPrice);
-        
-        // return new acresOwned Value
-        return cropData.getAcresOwned();
     }
 
     /**

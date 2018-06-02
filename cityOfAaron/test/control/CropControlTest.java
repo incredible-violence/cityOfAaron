@@ -45,7 +45,7 @@ public class CropControlTest {
      * Test of buyLand method, of class CropControl.
      */
     
-    /*
+   
     @Test
     public void testBuyLand() {
         System.out.println("buyLand");
@@ -113,11 +113,11 @@ public class CropControlTest {
         //define the input variables
         cropData.setWheatInStore(10000);
         cropData.setPopulation(400);
-        cropData.setAcresOwned(3000); 
+        cropData.setAcresOwned(1234); 
         landPrice = 20;
         acresToBuy = 0;
        
-        expResult = 3000;
+        expResult = 1234;
         result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
        
@@ -141,15 +141,15 @@ public class CropControlTest {
         //define the input variables
         cropData.setWheatInStore(15000);
         cropData.setPopulation(300);
-        cropData.setAcresOwned(2500); 
+        cropData.setAcresOwned(2000); 
         landPrice = 20;
         acresToBuy = 500;
        
-        expResult = 3000;
+        expResult = 2500;
         result = CropControl.buyLand(landPrice, acresToBuy, cropData);
         assertEquals(expResult, result);
     }
-*/
+
     /**
      * Test of sellLand method, of class CropControl.
      */
