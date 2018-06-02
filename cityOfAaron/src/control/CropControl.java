@@ -217,11 +217,17 @@ public class CropControl {
         int wheatInStore = cropData.getWheatInStore();
        
     
-        if (landToPlant < 0) { return -1; }
+        if (landToPlant < 0) { 
+            return -1; 
+        }
         
-        if (landToPlant == 0) { return wheatInStore; }
+        if (landToPlant == 0) { 
+            return wheatInStore; 
+        }
         
-        if (landToPlant > acresOwned) { return -1; } 
+        if (landToPlant > acresOwned) { 
+            return -1; 
+        } 
         
         if ((landToPlant / 2) < wheatInStore) {
             int wheatRequired = landToPlant / 2; 
@@ -230,7 +236,9 @@ public class CropControl {
             return cropData.getWheatInStore();
         }
         
-        if ((landToPlant / 2) == wheatInStore) { return 0; }
+        if ((landToPlant / 2) == wheatInStore) { 
+            return 0; 
+        }
         
         return -1;
     }
