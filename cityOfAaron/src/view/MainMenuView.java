@@ -10,6 +10,7 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import model.Player;
+import model.Game; 
 
 /**
  *
@@ -128,8 +129,36 @@ public class MainMenuView {
      * Returns: none
      */
     public void startNewGame() {
-        System.out.println("Start New Game option Selected");
-    }
+        
+        //Create the new Game object
+        Game theGame = new Game();
+        
+        //Save a reference to it in the GameProject class
+        CityOfAaron.setTheGame(theGame);
+        
+        //Display the Banner page
+        System.out.println("Welcome to the city of Aaron."); 
+        
+        //Create a new Player object
+        Player thePlayer = new Player(); 
+                
+        //Prompt for and get the user's name
+        String name;
+        System.out.println("Please type in your first name: ");
+        name = keyboard.next();
+        
+        //Save the user's name in the Player object
+        thePlayer.setName(name);
+        
+        //Save a reference to the player object in the Game object
+        theGame.setThePlayer(thePlayer);
+        
+        //Display a welcome message
+        System.out.println("Welcome " + name + ". Have fun."); 
+        
+        //Display the Game menu
+        }
+    
     
     /**
      * Method: startSavedGame
