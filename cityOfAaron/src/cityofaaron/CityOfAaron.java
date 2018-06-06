@@ -3,7 +3,7 @@
  * Class: Main / CityOfAaron
  * CIT_260
  * Spring 2018
- * Team: James Kennedy, Mallory Di Bartolo
+ * Team: James Kennedy, Mallory DiBartolo
  ********************************************/
 
 package cityofaaron;
