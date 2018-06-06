@@ -31,6 +31,15 @@ public class CityOfAaron {
         
     }
 
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
+    }
+    
+    
 }
 
 /****************************************
