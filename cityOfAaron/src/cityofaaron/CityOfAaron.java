@@ -8,13 +8,9 @@
 
 package cityofaaron;
 
-import model.CropData;
-import model.Player;
-import model.Game;
-import model.TeamMember;
-import model.Location; 
-import model.ListItem; 
-import model.Map;
+import control.*;
+import model.*;
+import view.*;
 
 /**
  *
@@ -22,16 +18,25 @@ import model.Map;
  */
 
 public class CityOfAaron {
+    // variable for keeping a reference to Game object
+    private static Game theGame = null;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // TESTING MAINMENUVIEW CLASS
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
         
-        /****************************************
-         * CLASS TESTING METHODS
-         ***************************************/
-     
+    }
+
+}
+
+/****************************************
+ * COMPLETED CLASS TESTING METHODS
+ ***************************************/
+    /*
         // TESTING PLAYER CLASS
         System.out.println("TESTING PLAYER CLASS");
         Player playerOne = new Player();
@@ -41,23 +46,23 @@ public class CityOfAaron {
         System.out.println("Name = " + playerOneName);
         // TESTING GET METHOD
         System.out.println(playerOne.getName());
-        
-        
+    */
+    /*   
         // TESTING ENUM
         System.out.println("TESTING TEAMMEMBER ENUM");
         String teamMemberName = TeamMember.Admin.getName();
         String teamMemberTitle = TeamMember.Admin.getTitle();
         System.out.println("Team Member Name: " + teamMemberName); 
         System.out.println("Team Member Title: " + teamMemberTitle);
-        
+    */
+    /*
         // TESTING Game CLASS [WORK IN PROGRESS]
-        /*
         System.out.println("TESTING GAME CLASS");
         Game gameOne = new Game();
         gameOne.setThePlayer(playerOne);
         System.out.println("Player of Game One: " + gameOne.getThePlayer());
-        */
-        
+    */
+    /*
         // TESTING LOCATION CLASS
         System.out.println("TESTING LOCATION CLASS");
         Location location= new Location();
@@ -71,7 +76,8 @@ public class CityOfAaron {
         //TESTING GET METHOD
         System.out.println(location.getDescription());
         System.out.println(location.getSymbol());
-        
+    */
+    /*
         // TESTING ListItem CLASS
         System.out.println("TESTING ListItem CLASS"); 
         ListItem itemOne = new ListItem();
@@ -85,7 +91,8 @@ public class CityOfAaron {
         //TESTING GET METHOD
         System.out.println(itemOne.getNumber());
         System.out.println(itemOne.getName());
-        
+    */
+    /*
         // TESTING CropData Class via constructor
         System.out.println("TESTING CROPDATA CLASS w/ CONSTRUCTOR");
         CropData cropdata = new CropData(2018, 1000, 1500, 200, 400, 1, 2, 
@@ -106,14 +113,11 @@ public class CityOfAaron {
         System.out.println("Number Starved: " + cropdata.getNumStarved());
         System.out.println("Eaten By Rats: " + cropdata.getEatenByRats());
         System.out.println("Wheat for People: " + cropdata.getWheatForPeople());
-        
+    */
+    /*
         // TESTING Map Class
         System.out.println("TESTING MAP CLASS w/ CONSTRUCTOR");
         Map map = new Map(25, 25);
         System.out.println("Row Count: " + map.getColCount());
         System.out.println("Column Count: " + map.getRowCount());
-        
-    }
-
-}
-
+    */
