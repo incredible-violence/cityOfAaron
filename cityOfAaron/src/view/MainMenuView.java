@@ -9,7 +9,6 @@ package view;
 
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
-import model.Player;
 import model.*;
 
 /**
@@ -32,7 +31,7 @@ public class MainMenuView {
         
         theMenu = "\n" + 
                 "*********************************\n" + 
-                "* CITY OF AARON: MAIN GAME MENU *\n" +
+                "*   CITY OF AARON : MAIN MENU   *\n" +
                 "*********************************\n" +
                 " 1 - Start New Game\n" +
                 " 2 - Get and Start a Saved Game\n" +
@@ -130,38 +129,53 @@ public class MainMenuView {
      */
     public void startNewGame() {
         
-        //Create the new Game object
+        // Create the new Game object
         Game theGame = new Game();
         
-        //Save a reference to it in the GameProject class
+        // Save a reference to it in the GameProject class
         CityOfAaron.setTheGame(theGame);
         
-        //Display the Banner page
+        // Display the Banner page
         System.out.println("Welcome to the city of Aaron."); 
         
-        //Create a new Player object
+        // Create a new Player object
         Player thePlayer = new Player(); 
                 
-        //Prompt for and get the user's name
+        // Prompt for and get the user's name
         String name;
         System.out.println("Please type in your first name: ");
         name = keyboard.next();
         
-        //Save the user's name in the Player object
+        // Save the user's name in the Player object
         thePlayer.setName(name);
         
-        //Save a reference to the player object in the Game object
+        // Save a reference to the player object in the Game object
         theGame.setThePlayer(thePlayer);
         
-        //Display a welcome message
+        // Display a welcome message
         System.out.println("Welcome " + name + ". Have fun."); 
         
-        //Display the Game menu
+        // Display the Game menu
         
         // Create a CropData object
         CropData cropData = new CropData();
+        
+        // initialize it
+        cropData.setYear(0);
+        cropData.setPopulation(100);
+        cropData.setNewPeople(5);
+        cropData.setCropYield(3);
+        cropData.setNumberWhoDied(0);
+        cropData.setOffering(10);
+        cropData.setWheatInStore(2700);
+        cropData.setAcresOwned(1000);
+        cropData.setAcresPlanted(1000);
+        cropData.setHarvest(3000);
+        cropData.setOfferingBushels(300);
+        
+        // save
+        theGame.setCropData(cropData);
         }
-    
     
     /**
      * Method: startSavedGame
@@ -175,12 +189,15 @@ public class MainMenuView {
     
     /**
      * Method: displayHelpMenuView
-     * Purpose: creates game object, starts game
+     * Purpose: moves user to the Help Menu
      * Parameters: none
      * Returns: none
      */
     public void displayHelpMenuView() {
         System.out.println("Display Help Menu View option Selected");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenuView();
+        
     }
     
     /**
