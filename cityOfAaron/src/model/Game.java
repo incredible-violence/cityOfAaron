@@ -31,6 +31,8 @@ public class Game implements Serializable {
     private ArrayList<ListItem> provisions = new ArrayList<ListItem>();
     private Boolean done;
     
+    private CropData cropData = null;
+    
     //Attempt at implementing the ListItem-Game relationship -Mallory 
     //private ArrayList<ListItem> name = new ArrayList<ListItem>(); 
     //private ArrayList<ListItem> number = new ArrayList<ListItem>();
@@ -113,6 +115,14 @@ public class Game implements Serializable {
 
     public void setDone(Boolean done) {
         this.done = done;
+    }
+    
+    public CropData getCropData() {
+        return cropData;
+    }
+
+    public void setCropData(CropData cropData) {
+        this.cropData = cropData;
     }
         
     // hashCode()

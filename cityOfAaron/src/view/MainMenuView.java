@@ -10,7 +10,7 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import model.Player;
-import model.Game; 
+import model.*;
 
 /**
  *
@@ -157,6 +157,9 @@ public class MainMenuView {
         System.out.println("Welcome " + name + ". Have fun."); 
         
         //Display the Game menu
+        
+        // Create a CropData object
+        CropData cropData = new CropData();
         }
     
     
