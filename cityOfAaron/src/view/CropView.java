@@ -80,4 +80,38 @@ public class CropView {
         // actually sell the land
         CropControl.sellLand(price, toSell, cropData);
     }
+    
+    public static void feedPeopleView(CropData cropData) {
+        
+        //get amount of wheat in store
+        int wheat = cropData.getWheatInStore();
+        //display wheat in store to user
+        System.out.format("There are %d bushels of wheat in store.%n", wheat); 
+        //ask user how much wheat to feed the people
+        System.out.print("How much wheat would you like to give to the people?");
+        //get input
+        int wheatForPeople = keyboard.nextInt(); 
+        //give to the people
+        CropControl.feedPeople(wheatForPeople, cropData); 
+        
+    }
+    
+    public static void plantCropsView(CropData cropData) {
+        //get acres owned by the player and wheat in store
+        int acres = cropData.getAcresOwned(); 
+        int wheat = cropData.getWheatInStore();
+        //display wheat in store to user
+        //display acres owned to user
+        System.out.format("You own %d acres of land.%n", acres); 
+        System.out.format("There are %d bushels of wheat in store.%n", wheat);
+        //ask user how many bushels of wheat they would like to plant
+        System.out.print("How many acres would you like to plant?"); 
+        //get input
+        int landToPlant = keyboard.nextInt();
+        //plant the crops
+        CropControl.plantCrops(landToPlant, cropData); 
+        
+        
+        
+    }
 }
