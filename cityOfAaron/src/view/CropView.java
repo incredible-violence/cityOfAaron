@@ -28,6 +28,20 @@ public class CropView {
     // methods
     
     /**
+     * Method: runCropsView
+     * Purpose: runs the game
+     * Parameters: none
+     * Returns: none
+     */
+    public static void runCropsView() {
+        
+        // call buyLandView
+        buyLandView();
+        
+        // other cropView methods as they become relevant
+    }
+    
+    /**
      * Method: buyLandView
      * Purpose: interface with user input for buying land
      * Parameters: none
@@ -44,20 +58,26 @@ public class CropView {
         int toBuy;
         toBuy = keyboard.nextInt();
         // call buyLand() in contol layer to actually buy the land
-        CropControl.buyLand(toBuy, price, cropData);
+        CropControl.buyLand(price, toBuy, cropData);
     }
     
     /**
-     * Method: runCropsView
-     * Purpose: runs the game
+     * Method: sellLandView
+     * Purpose: interface for selling land
      * Parameters: none
      * Returns: none
      */
-    public static void runCropsView() {
+    public static void sellLandView() {
         
-        // call buyLandView
-        buyLandView();
-        
-        // other cropView methods as they become relevant
+        // get cost of land this round
+        int price = CropControl.calcLandPrice();
+        // prompt user to enter number of of acres to buy
+        System.out.format("Land is selling for %d bushels per acre.%n", price);
+        System.out.print("How many acres of land do you wish to sell?");
+        // get input
+        int toSell;
+        toSell = keyboard.nextInt();
+        // actually sell the land
+        CropControl.sellLand(price, toSell, cropData);
     }
 }
