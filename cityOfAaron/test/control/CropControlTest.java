@@ -19,6 +19,7 @@ import org.junit.BeforeClass;
  *
  * @author mallorydibartolo
  */
+
 public class CropControlTest {
     
     public CropControlTest() {

@@ -9,6 +9,7 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import model.*;
+
 /**
  *
  * @author jamesK
