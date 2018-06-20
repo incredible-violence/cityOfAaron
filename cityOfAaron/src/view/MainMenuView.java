@@ -15,7 +15,7 @@ import model.*;
  *
  * @author jamesK mallorydibartolo
  */
-public class MainMenuView {
+public class MainMenuView extends MenuView {
     
     Scanner keyboard = new Scanner(System.in);
     private String theMenu;
@@ -29,7 +29,7 @@ public class MainMenuView {
      */
     public MainMenuView() {
         
-        theMenu = "\n" + 
+        super("\n" + 
                 "*********************************\n" + 
                 "*   CITY OF AARON : MAIN MENU   *\n" +
                 "*********************************\n" +
@@ -38,56 +38,10 @@ public class MainMenuView {
                 " 3 - Get Help on Playing the Game\n" + 
                 " 4 - Save Game\n" + 
                 " 5 - Quit\n";
-        max = 5;
+        max = 5);
     }
     
-    /**
-     * Method: displayMenuView
-     * Purpose: displays the menu, gets user input, does the thing
-     * Parameters: none
-     * Returns: none
-     */
-    public void displayMenuView() {
-        int menuOption;
-        do {
-            // Display the Menu
-            System.out.println(theMenu);
-            
-            // Prompt the User and get the user's input
-            menuOption = getMenuOption();
-             
-            // Perform Desired action
-            doAction(menuOption);
-            
-            // Determine and display the next view            
-        } 
-        while (menuOption != max); 
-    }
-
-    /**
-     * Method: getMenuOption()
-     * Purpose: get the user's input
-     * Parameters: none
-     * Returns: integer - the option selected.
-     * @return userInput
-     */
-    public int getMenuOption() {
-        // declare a variable to hold user input
-        int userInput;
-        
-        // begin loop
-        do {
-            // get user input from keyboard
-            userInput = keyboard.nextInt();
-            // if not valid, output error
-            if (userInput < 1 || userInput > max) {
-                System.out.println("Option must be between 1 and " + max);
-            }
-        // loop back to top if input not valid
-        } while(userInput < 1 || userInput > max);
-        // return value input by the user
-        return userInput;
-    }
+    
     
     /**
      * Method: doAction
@@ -96,7 +50,7 @@ public class MainMenuView {
      * @param option
      * Returns: none
      */
-    public void doAction(int option) {
+    @Override public void doAction(int option) {
         // governing switch statement
         switch (option) {
             // If option 1, call startNewGame()
@@ -196,7 +150,7 @@ public class MainMenuView {
     public void displayHelpMenuView() {
         System.out.println("Display Help Menu View option Selected");
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenuView();
+        helpMenu.displayMenu();
         
     }
     

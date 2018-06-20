@@ -46,7 +46,7 @@ public class HelpMenuView {
      * Parameters: none
      * Returns: none
      */
-    public void displayMenuView() {
+    public void displayMenu() {
         int menuOption;
         do {
             // Display the Menu

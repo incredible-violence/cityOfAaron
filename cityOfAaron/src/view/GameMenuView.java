@@ -48,7 +48,7 @@ public class GameMenuView {
      * Parameters: none
      * Returns: none
      */
-    public void displayMenuView() {
+    public void displayMenu() {
         int menuOption;
         do {
             // Display the Menu
