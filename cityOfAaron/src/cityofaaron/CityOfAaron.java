@@ -27,7 +27,7 @@ public class CityOfAaron {
     public static void main(String[] args) {
         // TESTING MAINMENUVIEW CLASS
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();
+        mmv.displayMenu();
         
     }
 

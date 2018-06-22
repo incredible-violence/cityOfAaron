@@ -26,13 +26,11 @@ public abstract class MenuView implements ViewInterface {
      * Returns: none
      */
     
-    public MenuView(String menu, int max) {
-        this.menu = menu; 
-        this.max = max; 
+    public MenuView(String _menu, int _max) {
+        this.menu = _menu; 
+        this.max = _max; 
     }
     
-
-
     /**
     * The displayMenu method
     * Purpose: displays the menu, gets the user's input, and does the
@@ -46,7 +44,7 @@ public abstract class MenuView implements ViewInterface {
         int menuOption = 0;
         do {
             // Display the Menu
-            System.out.println(theMenu);
+            System.out.println(menu);
             
             // Prompt the User and get the user's input
             menuOption = getMenuOption();

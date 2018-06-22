@@ -37,8 +37,8 @@ public class MainMenuView extends MenuView {
                 " 2 - Get and Start a Saved Game\n" +
                 " 3 - Get Help on Playing the Game\n" + 
                 " 4 - Save Game\n" + 
-                " 5 - Quit\n";
-        max = 5);
+                " 5 - Quit\n", 
+                5);
     }
     
     
