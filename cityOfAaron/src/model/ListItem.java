@@ -24,6 +24,11 @@ public class ListItem implements Serializable {
     public ListItem() {
     }
     
+    public ListItem(String name, int number) {
+        setName(name);
+        setNumber(number);
+    }
+    
     //getter: name
     public String getName() {
         return name;
