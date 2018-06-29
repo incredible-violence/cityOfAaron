@@ -114,7 +114,7 @@ public class MainMenuView extends MenuView {
         
         //show the game menu
         GameMenuView gmv = new GameMenuView();
-        gmv.displayMenuView(); 
+        gmv.displayMenu(); 
         
         //********
         // Create the new Game object
