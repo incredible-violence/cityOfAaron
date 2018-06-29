@@ -17,7 +17,11 @@ import java.util.Objects;
  */
 
 public class Map implements Serializable {
-
+// variables
+    private int rowCount;
+    private int colCount;
+    private Location[][] locations; 
+    //private ArrayList<Location> locations = new ArrayList<Location>();
     // constructors
     /**
     * default constructor
@@ -38,19 +42,15 @@ public class Map implements Serializable {
      * Returns: none
      */
     
-    public Map(int rowCount, int colCount) {
-        this.rowCount = rowCount;
-        this.colCount = colCount;
+    public Map(int _rows, int _cols) {
+        this.rowCount = _rows;
+        this.colCount = _cols;
         
         // create the array of location objects
-        this.locations = new Location[rowCount][colCount]; 
+        this.locations = new Location[_rows][_cols]; 
     }
     
-    // variables
-    private int rowCount;
-    private int colCount;
-    private Location[][]locations; 
-    //private ArrayList<Location> locations = new ArrayList<Location>();
+    
         
     // getters & setters
 
