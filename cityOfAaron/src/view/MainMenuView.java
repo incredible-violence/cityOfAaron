@@ -10,6 +10,8 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import model.*;
+import control.*; 
+
 
 /**
  *
@@ -83,52 +85,80 @@ public class MainMenuView extends MenuView {
      */
     public void startNewGame() {
         
-        // Create the new Game object
-        Game theGame = new Game();
+        //Show banner page
+        System.out.println(
+        "***********************************************************\n" +
+        "* Welcome to the City of Aaron. You have been summoned *\n" +
+        "* by the High Priest to assume your role as ruler of *\n" +
+        "* the city. Your responsibility is to buy land, sell *\n" +
+        "* land, determine how much wheat to plant each year, *\n" +
+        "* and how much to set aside to feed the people. You *\n" +
+        "* will also be required to pay an annual tithe on the *\n" +
+        "* wheat that is harvested. If you fail to provide *\n" +
+        "* enough wheat for the people to eat, people will die *\n" +
+        "* and your workforce will be diminished. Plan very *\n" +
+        "* carefully or you may find yourself in trouble with *\n" +
+        "* the people. And oh, watch out for plagues and rats! *\n" +
+        "***********************************************************/n");
         
-        // Save a reference to it in the GameProject class
-        CityOfAaron.setTheGame(theGame);
-        
-        // Display the Banner page
-        System.out.println("Welcome to the city of Aaron."); 
-        
-        // Create a new Player object
-        Player thePlayer = new Player(); 
-                
         // Prompt for and get the user's name
         String name;
         System.out.println("Please type in your first name: ");
         name = keyboard.next();
         
+         // Display a welcome message
+        System.out.println("Welcome " + name + ". Have fun playing."); 
+        
+        //call the createNewGame() method. Pass the name as a parameter
+        GameControl.createNewGame(name); 
+        
+        //show the game menu
+        GameMenuView gmv = new GameMenuView();
+        gmv.displayMenuView(); 
+        
+        //********
+        // Create the new Game object
+        //Game theGame = new Game();
+        
+        // Save a reference to it in the GameProject class
+        //CityOfAaron.setTheGame(theGame);
+        
+        // Display the Banner page
+        //System.out.println("Welcome to the city of Aaron."); 
+        
+        // Create a new Player object
+        //Player thePlayer = new Player(); 
+                
+       
+        
         // Save the user's name in the Player object
-        thePlayer.setName(name);
+        //thePlayer.setName(name);
         
         // Save a reference to the player object in the Game object
-        theGame.setThePlayer(thePlayer);
+        //theGame.setThePlayer(thePlayer);
         
-        // Display a welcome message
-        System.out.println("Welcome " + name + ". Have fun."); 
+       
         
         // Display the Game menu
         
         // Create a CropData object
-        CropData cropData = new CropData();
+        //CropData cropData = new CropData();
         
         // initialize it
-        cropData.setYear(0);
-        cropData.setPopulation(100);
-        cropData.setNewPeople(5);
-        cropData.setCropYield(3);
-        cropData.setNumberWhoDied(0);
-        cropData.setOffering(10);
-        cropData.setWheatInStore(2700);
-        cropData.setAcresOwned(1000);
-        cropData.setAcresPlanted(1000);
-        cropData.setHarvest(3000);
-        cropData.setOfferingBushels(300);
+        //cropData.setYear(0);
+        //cropData.setPopulation(100);
+        //cropData.setNewPeople(5);
+        //cropData.setCropYield(3);
+        //cropData.setNumberWhoDied(0);
+        //cropData.setOffering(10);
+        //cropData.setWheatInStore(2700);
+        //cropData.setAcresOwned(1000);
+        //cropData.setAcresPlanted(1000);
+        //cropData.setHarvest(3000);
+        //cropData.setOfferingBushels(300);
         
         // save
-        theGame.setCropData(cropData);
+        //theGame.setCropData(cropData);
         }
     
     /**

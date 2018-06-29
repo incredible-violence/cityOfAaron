@@ -19,21 +19,38 @@ import java.util.Objects;
 public class Map implements Serializable {
 
     // constructors
+    /**
+    * default constructor
+    * Purpose: Set data members to default values
+    * Parameters: none
+    * Returns: none
+    */
     
-    // default constructor
     public Map() {
     }
     
-    // initializing constructor
+    /**
+     * parameterized Map constructor
+     * Purpose: sets row and column values
+     *   and creates an array of Location objects
+     * @param rowCount
+     * @param colCount 
+     * Returns: none
+     */
+    
     public Map(int rowCount, int colCount) {
         this.rowCount = rowCount;
         this.colCount = colCount;
+        
+        // create the array of location objects
+        this.locations = new Location[rowCount][colCount]; 
     }
     
     // variables
     private int rowCount;
     private int colCount;
-    private ArrayList<Location> locations = new ArrayList<Location>();
+    private Location[][]locations; 
+    //private ArrayList<Location> locations = new ArrayList<Location>();
         
     // getters & setters
 
@@ -52,13 +69,26 @@ public class Map implements Serializable {
     public void setColCount(int colCount) {
         this.colCount = colCount;
     }
-
-    public ArrayList<Location> getLocations() {
-        return locations;
+    /**
+     * The getLocation method
+     * Purpose: returns the location object at the given
+     *   row and column 
+     * Parameters: a row and a column
+     * Returns: a Location object
+     */
+    public Location getLocation(int row, int col) {
+        return this.locations[row][col];
     }
 
-    public void setLocations(ArrayList<Location> locations) {
-        this.locations = locations;
+    /**
+     * The setLocation method
+     * Purpose: stores a location object at the row and column
+     * Parameters: a row and column, and a reference to a location object
+     * Returns: void
+     */
+    
+    public void setLocation(int row, int col, Location _location) {
+        this.locations[row][col] = _location;
     }
     
     // equals, hashCode, toString
