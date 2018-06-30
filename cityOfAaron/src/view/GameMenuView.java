@@ -9,6 +9,7 @@ package view;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import model.*;
+import control.*; 
 
 /**
  *
@@ -83,6 +84,8 @@ public class GameMenuView extends MenuView {
      */
     public void viewMap() {
         System.out.println("View Map Option Selected");
+        GameControl theGameControl = new GameControl();
+        theGameControl.displayMap(); 
     }
     
     /**

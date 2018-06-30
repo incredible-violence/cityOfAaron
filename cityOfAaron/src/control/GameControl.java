@@ -114,10 +114,51 @@ public class GameControl {
             //set a farmland location with a hint
             loc = new Location();
             loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+            loc.setSymbol("///");
             theMap.setLocation(0, 2, loc);
             
+            //define the string for a mountain range
+            String mountain = "You are in a mountain range. \n"; 
+            
+            loc = new Location();
+            
+            loc.setDescription(mountain);
+            loc.setSymbol("^^^");
+            
+            for(int i = 0; i < MAX_COL; i++){
+            theMap.setLocation(2, i, loc);
+            }
+             
+            //define the string for the plains
+            String plains = "You are in the plains. \n"; 
+            
+            loc = new Location();
+            
+            loc.setDescription(plains);
+            loc.setSymbol("'''");
+            
+            for(int i = 3; i < 6; i++){
+            theMap.setLocation(i, i, loc);
+            }
+            
+            //define the string for a trading post
+            
+            String tradingPost = "Welcome to the trading post. \n";
+            loc = new Location();
+            loc.setDescription(tradingPost);
+            loc.setSymbol("$"); 
+            theMap.setLocation(5, 5, loc);
+            
+                    
             //save a reference to the map object 
             theGame.setTheMap(theMap); 
+        }
+        
+        public void displayMap() {
+            Game theGame = CityOfAaron.getTheGame();
+            Map theMap = theGame.getTheMap(); 
+            System.out.println("Hi, I am the Map");
+            System.out.println(theMap.getLocation(0, 0));
         }
         
         
