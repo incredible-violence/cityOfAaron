@@ -74,6 +74,15 @@ public class GameControl {
             theGame.setAnimals(animals);
         }
         //create the list of tools
+        public static void createToolsList() {
+            ArrayList<ListItem> tools = new ArrayList<>(); 
+            
+            tools.add(new ListItem("plow", 15));
+            tools.add(new ListItem("shovel", 20));
+            tools.add(new ListItem("scythe", 17));
+           
+           
+        }
         //create the list of provisions
         
         //create the Locations and the Map object 
@@ -170,6 +179,8 @@ public class GameControl {
                 }
             }
         }
+        
+
         
         
        

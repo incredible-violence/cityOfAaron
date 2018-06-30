@@ -89,13 +89,15 @@ public class GameMenuView extends MenuView {
     }
     
     /**
-     * Method: viewMapHelp
-     * Purpose: get help with the map
+     * Method: viewList
+     * Purpose: Creates a ViewList object and calls its displayMenuView() method
      * Parameters: none
      * Returns: none
      */
     public void viewList() {
         System.out.println("View List Option Selected");
+        ListMenuView lv = new ListMenuView();
+        lv.displayMenu(); 
     }
     
     /**

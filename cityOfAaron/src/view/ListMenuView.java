@@ -28,11 +28,11 @@ public class ListMenuView extends MenuView {
                 "*********************************\n" + 
                 "*   CITY OF AARON : LIST MENU   *\n" +
                 "*********************************\n" +
-                " 1 - Option 1\n" +
-                " 2 - Option 2\n" +
-                " 3 - Option 3\n" + 
-                " 4 - Option 4\n" + 
-                " 5 - Quit\n",
+                " 1 - View the development team\n" +
+                " 2 - View a list of animals\n" +
+                " 3 - View a list of tools\n" + 
+                " 4 - View a list of provisions\n" + 
+                " 5 - Return to the game menu\n",
                 5);    
     }
     
@@ -48,19 +48,19 @@ public class ListMenuView extends MenuView {
         switch (option) {
             // If option 1, call viewGoals()
             case 1:
-                optionOne();
+                viewTeam();
                 break;
             // if option 2, call viewMapHelp()
             case 2:
-                optionTwo();
+                viewAnimals();
                 break;
             // if option 3, call viewMoveHelp()
             case 3:
-                optionThree();
+                viewTools();
                 break;
             // if option 4, call viewListHelp()
             case 4:
-                optionFour();
+                viewProvisions();
                 break;
             // if option 5, display goodbye message
             case 5:
@@ -68,19 +68,19 @@ public class ListMenuView extends MenuView {
         }
     }
     
-    public void optionOne() {
+    public void viewTeam() {
         System.out.println("Option 1 Selected");
     }
     
-    public void optionTwo() {
+    public void viewAnimals() {
         System.out.println("Option 2 Selected");
     }
     
-    public void optionThree() {
+    public void viewTools() {
         System.out.println("Option 3 Selected");
     }
     
-    public void optionFour() {
+    public void viewProvisions() {
         System.out.println("Option 4 Selected");
     }
 }
