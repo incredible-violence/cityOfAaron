@@ -37,9 +37,9 @@ public class GameControl {
         theGame.setThePlayer(thePlayer);
         
         // create the Map
-        createMap();
-        
-     
+        Map newMap = createMap();
+        theGame.setTheMap(newMap);
+             
     }
     
     //create the CropData object
@@ -85,9 +85,9 @@ public class GameControl {
          * The createMap method
          * Purpose: creates the location objects and the map
          * Parameters: none
-         * Returns: none
+         * @return theMap
          */
-        public static void createMap() {
+        public static Map createMap() {
             //create the Map object
             //refer to the Map constructor
             Map theMap = new Map(MAX_ROW, MAX_COL); 
@@ -121,7 +121,9 @@ public class GameControl {
             loc2.setSymbol("///");
             theMap.setLocation(0, 2, loc2);
             
-            /* MOUNTAIN */
+    /*
+            // MOUNTAIN
+            
             //define the string for a mountain range
             String mountain = "You are in a mountain range. \n"; 
             // define new Location
@@ -133,8 +135,9 @@ public class GameControl {
             for (int i = 0; i < MAX_COL; i++) {
             theMap.setLocation(2, i, loc3);
             }
-             
-            /* PLAINS */
+    */
+    /*
+            // PLAINS 
             //define the string for the plains
             String plains = "You are in the plains. \n"; 
             // define the plains location
@@ -148,17 +151,18 @@ public class GameControl {
                     theMap.setLocation(i, j, loc4);                    
                 }
             }
-            
-            /* TRADING POST */
+    */
+    /*
+            // TRADING POST
             //define the string for a trading post
             String tradingPost = "Welcome to the trading post. \n";
             Location loc5 = new Location();
             loc5.setDescription(tradingPost);
             loc5.setSymbol("$"); 
             theMap.setLocation(5, 5, loc5);
-                                
-            //save a reference to the map object 
-            theGame.setTheMap(theMap); 
+    */                    
+            // return 
+            return theMap;
         }
         
         public void displayMap() {
@@ -169,7 +173,7 @@ public class GameControl {
             // for loop to display the 2D array Map
             for (int i = 0; i < MAX_ROW; i++) {
                 for (int j = 0; i < MAX_COL; j++) {
-                    System.out.printf(theMap.getLocation(i, j).getSymbol());
+                    System.out.print(theMap.getLocation(i, j).getSymbol());
                 }
             }
         }
