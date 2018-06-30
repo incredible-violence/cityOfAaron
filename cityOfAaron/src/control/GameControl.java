@@ -34,7 +34,10 @@ public class GameControl {
         //create the player object. Save it in the game object
         Player thePlayer = new Player();
         thePlayer.setName(name);
-        theGame.setThePlayer(thePlayer); 
+        theGame.setThePlayer(thePlayer);
+        
+        // create the Map
+        createMap();
         
      
     }
@@ -164,9 +167,9 @@ public class GameControl {
             System.out.println("Hi, I am the Map");
             
             // for loop to display the 2D array Map
-            for (int i = 0; i < theMap.getRowCount(); i++) {
-                for (int j = 0; i < theMap.getColCount(); j++) {
-                    System.out.print(theMap.getLocation(i, j).getSymbol());
+            for (int i = 0; i < MAX_ROW; i++) {
+                for (int j = 0; i < MAX_COL; j++) {
+                    System.out.printf(theMap.getLocation(i, j).getSymbol());
                 }
             }
         }
