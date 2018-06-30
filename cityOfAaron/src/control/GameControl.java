@@ -106,59 +106,69 @@ public class GameControl {
                 theMap.setLocation(i, 4, loc); 
             }
             
+            /* FARMLAND */
             //define the string for a farm land location
             String farmland = "You are on the fertile banks of the River.\n" +
                               "In the spring, this low farmland floods and is covered with rich\n" +
                               "new soil. Wheat is planted as far as you can see.";
             
             //set a farmland location with a hint
-            loc = new Location();
-            loc.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
-            loc.setSymbol("///");
-            theMap.setLocation(0, 2, loc);
+            Location loc2 = new Location();
+            loc2.setDescription(farmland + "\nOne bushel will plant two acres of wheat.");
+            loc2.setSymbol("///");
+            theMap.setLocation(0, 2, loc2);
             
+            /* MOUNTAIN */
             //define the string for a mountain range
             String mountain = "You are in a mountain range. \n"; 
+            // define new Location
+            Location loc3 = new Location();
+            loc3.setDescription(mountain);
+            loc3.setSymbol("^^^");
             
-            loc = new Location();
-            
-            loc.setDescription(mountain);
-            loc.setSymbol("^^^");
-            
-            for(int i = 0; i < MAX_COL; i++){
-            theMap.setLocation(2, i, loc);
+            // for loop sets 3rd row of map as mountain
+            for (int i = 0; i < MAX_COL; i++) {
+            theMap.setLocation(2, i, loc3);
             }
              
+            /* PLAINS */
             //define the string for the plains
             String plains = "You are in the plains. \n"; 
+            // define the plains location
+            Location loc4 = new Location();
+            loc4.setDescription(plains);
+            loc4.setSymbol("'''");
             
-            loc = new Location();
-            
-            loc.setDescription(plains);
-            loc.setSymbol("'''");
-            
-            for(int i = 3; i < 6; i++){
-            theMap.setLocation(i, i, loc);
+            // for loop sets 
+            for (int i = 0; i < 2; i++) {
+                for (int j = 2; j < 4; j++) {
+                    theMap.setLocation(i, j, loc4);                    
+                }
             }
             
+            /* TRADING POST */
             //define the string for a trading post
-            
             String tradingPost = "Welcome to the trading post. \n";
-            loc = new Location();
-            loc.setDescription(tradingPost);
-            loc.setSymbol("$"); 
-            theMap.setLocation(5, 5, loc);
-            
-                    
+            Location loc5 = new Location();
+            loc5.setDescription(tradingPost);
+            loc5.setSymbol("$"); 
+            theMap.setLocation(5, 5, loc5);
+                                
             //save a reference to the map object 
             theGame.setTheMap(theMap); 
         }
         
         public void displayMap() {
-            Game theGame = CityOfAaron.getTheGame();
-            Map theMap = theGame.getTheMap(); 
+            Game _game = CityOfAaron.getTheGame();
+            Map theMap = _game.getTheMap(); 
             System.out.println("Hi, I am the Map");
-            System.out.println(theMap.getLocation(0, 0));
+            
+            // for loop to display the 2D array Map
+            for (int i = 0; i < theMap.getRowCount(); i++) {
+                for (int j = 0; i < theMap.getColCount(); j++) {
+                    System.out.print(theMap.getLocation(i, j).getSymbol());
+                }
+            }
         }
         
         
