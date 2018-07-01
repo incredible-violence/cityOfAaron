@@ -8,17 +8,17 @@ package view;
 
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
+import control.GameControl;
 import model.*;
 
 /**
  *
- * @authorjamesk
+ * @author jamesk mallory di bartolo
  */
 public class ListMenuView extends MenuView {
     
     Scanner keyboard = new Scanner(System.in);
-    private String listMenu;
-    private int max;
+    GameControl theGameControl = new GameControl();
     
     /**
      * Constructor
@@ -69,15 +69,18 @@ public class ListMenuView extends MenuView {
     }
     
     public void viewTeam() {
-        System.out.println("Option 1 Selected");
+        System.out.println("View Team Selected");
     }
     
     public void viewAnimals() {
-        System.out.println("Option 2 Selected");
+        System.out.println("View Animals Selected");
+        GameControl.showAnimalsList();
     }
     
     public void viewTools() {
         System.out.println("Option 3 Selected");
+        GameControl.showToolsList();
+        
     }
     
     public void viewProvisions() {
