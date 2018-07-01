@@ -85,9 +85,21 @@ public class GameControl {
             tools.add(new ListItem("shovel", 20));
             tools.add(new ListItem("scythe", 17));
            
+            theGame.setTools(tools);
            
         }
         //create the list of provisions
+        public static void createProvisionsList() {
+            ArrayList<ListItem> provisions = new ArrayList<>();
+            
+            provisions.add(new ListItem("provision1", 25)); 
+            provisions.add(new ListItem("provision2", 34));
+            provisions.add(new ListItem("provision3", 34));
+            provisions.add(new ListItem("provision4", 34));
+            provisions.add(new ListItem("provision5", 34));
+            
+            theGame.setProvisions(provisions);
+        }
         
         //create the Locations and the Map object 
         
@@ -195,6 +207,16 @@ public class GameControl {
                     
                 }
                 System.out.println("");
+            }
+        }
+        
+        public void displayProvisions() {
+            Game _game = CityOfAaron.getTheGame(); 
+            provisionsList = createProvisionsList(); 
+            System.out.println("Provisions"); 
+            
+            for(int i = 0; i < provisionsList.size(); i++) {
+                System.out.println(provisionsList); 
             }
         }
    
