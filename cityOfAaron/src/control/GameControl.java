@@ -29,7 +29,7 @@ public class GameControl {
         //create the game object. Save it in the main driver file
         
         theGame = new Game();
-        CityOfAaron.setTheGame(theGame); 
+        
         
         //create the player object. Save it in the game object
         Player thePlayer = new Player();
@@ -39,6 +39,8 @@ public class GameControl {
         // create the Map
         Map newMap = createMap();
         theGame.setTheMap(newMap);
+        
+        CityOfAaron.setTheGame(theGame); 
              
     }
     
@@ -117,8 +119,9 @@ public class GameControl {
             for(int i = 0; i < MAX_ROW; i++) {
                 theMap.setLocation(i, 4, loc); 
             }
+    
+            // FARMLAND
             
-            /* FARMLAND */
             //define the string for a farm land location
             String farmland = "You are on the fertile banks of the River.\n" +
                               "In the spring, this low farmland floods and is covered with rich\n" +
@@ -130,9 +133,8 @@ public class GameControl {
             loc2.setSymbol("///");
             theMap.setLocation(0, 2, loc2);
             
-    /*
             // MOUNTAIN
-            
+       
             //define the string for a mountain range
             String mountain = "You are in a mountain range. \n"; 
             // define new Location
@@ -141,11 +143,10 @@ public class GameControl {
             loc3.setSymbol("^^^");
             
             // for loop sets 3rd row of map as mountain
-            for (int i = 0; i < MAX_COL; i++) {
-            theMap.setLocation(2, i, loc3);
+            for (int i = 0; i < 4; i++) {
+            theMap.setLocation(1, i, loc3);
             }
-    */
-    /*
+            
             // PLAINS 
             //define the string for the plains
             String plains = "You are in the plains. \n"; 
@@ -155,40 +156,47 @@ public class GameControl {
             loc4.setSymbol("'''");
             
             // for loop sets 
-            for (int i = 0; i < 2; i++) {
-                for (int j = 2; j < 4; j++) {
+            for (int i = 2; i < 5; i++) {
+                for (int j = 0; j < 3; j++) {
                     theMap.setLocation(i, j, loc4);                    
                 }
             }
-    */
-    /*
+          
             // TRADING POST
+            
             //define the string for a trading post
             String tradingPost = "Welcome to the trading post. \n";
             Location loc5 = new Location();
             loc5.setDescription(tradingPost);
-            loc5.setSymbol("$"); 
-            theMap.setLocation(5, 5, loc5);
-    */                    
+            loc5.setSymbol("$$$"); 
+            theMap.setLocation(4, 4, loc5);
+        
             // return 
             return theMap;
         }
-        
+   
         public void displayMap() {
             Game _game = CityOfAaron.getTheGame();
             Map theMap = _game.getTheMap(); 
             System.out.println("Hi, I am the Map");
             
             // for loop to display the 2D array Map
-            for (int i = 0; i < MAX_ROW; i++) {
-                for (int j = 0; i < MAX_COL; j++) {
-                    System.out.print(theMap.getLocation(i, j).getSymbol());
+            for (int i = 0; i < MAX_ROW; ++i) {
+                for (int j = 0; j < MAX_COL; ++j) {
+                    // for debugging
+                    // System.out.print(i);
+                    // System.out.print(j);
+                    
+                    if (theMap.getLocation(i, j) == null) {
+                        System.out.print("...");
+                    }
+                    else {
+                        System.out.print(theMap.getLocation(i, j).getSymbol());
+                    }
+                    
                 }
+                System.out.println("");
             }
         }
-        
-
-        
-        
-       
+   
 }

@@ -37,11 +37,10 @@ public class Map implements Serializable {
      * parameterized Map constructor
      * Purpose: sets row and column values
      *   and creates an array of Location objects
-     * @param rowCount
-     * @param colCount 
+     * @param _rows
+     * @param _cols 
      * Returns: none
      */
-    
     public Map(int _rows, int _cols) {
         this.rowCount = _rows;
         this.colCount = _cols;
@@ -75,6 +74,9 @@ public class Map implements Serializable {
      *   row and column 
      * Parameters: a row and a column
      * Returns: a Location object
+     * @param row
+     * @param col
+     * @return 
      */
     public Location getLocation(int row, int col) {
         return this.locations[row][col];
