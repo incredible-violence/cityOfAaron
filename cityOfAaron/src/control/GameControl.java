@@ -7,6 +7,7 @@
 
 package control;
 
+import java.util.Scanner;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
 import model.*; 
@@ -77,6 +78,19 @@ public class GameControl {
             //save the animals in the game
             theGame.setAnimals(animals);
         }
+        
+        // method to display animals list
+        public static void showAnimalsList() {
+            System.out.println("showAnimalsList Method Called");
+            ArrayList<ListItem> animals = theGame.getAnimals();
+            
+            for (int i = 0; i < theGame.getAnimals().size(); i++) {
+                System.out.println("Loop");
+                System.out.println(animals.get(i).getName() + ": " + animals.get(i).getNumber());
+            }
+            
+        }
+        
         //create the list of tools
         public static void createToolsList() {
             ArrayList<ListItem> tools = new ArrayList<>(); 
@@ -87,6 +101,12 @@ public class GameControl {
            
            
         }
+        
+        // method to display tools list
+        public static void showToolsList() {
+            System.out.println("showToolsList Method Called");
+        }
+        
         //create the list of provisions
         
         //create the Locations and the Map object 
