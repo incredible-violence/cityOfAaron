@@ -121,6 +121,15 @@ public class GameControl {
             theGame.setProvisions(provisions);
         }
         
+        // display Provisions List
+         public void displayProvisions() {
+            ArrayList<ListItem> provisionsList = theGame.getProvisions();
+            System.out.println("Provisions"); 
+            
+            for(int i = 0; i < provisionsList.size(); i++) {
+                System.out.println(provisionsList.get(i).getName() + ": " + provisionsList.get(i).getNumber()); 
+            }
+        }
         //create the Locations and the Map object 
         
         /**
@@ -230,14 +239,6 @@ public class GameControl {
             }
         }
         
-        public void displayProvisions() {
-            Game _game = CityOfAaron.getTheGame(); 
-            provisionsList = createProvisionsList(); 
-            System.out.println("Provisions"); 
-            
-            for(int i = 0; i < provisionsList.size(); i++) {
-                System.out.println(provisionsList); 
-            }
-        }
+       
    
 }
