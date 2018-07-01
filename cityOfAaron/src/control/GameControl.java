@@ -84,9 +84,9 @@ public class GameControl {
             System.out.println("showAnimalsList Method Called");
             ArrayList<ListItem> animals = theGame.getAnimals();
             
-            for (int i = 0; i < theGame.getAnimals().size(); i++) {
+            for (ListItem item : animals) {
                 System.out.println("Loop");
-                System.out.println(animals.get(i).getName() + ": " + animals.get(i).getNumber());
+                System.out.println(item.getName() + ": " + item.getNumber());
             }
             
         }
@@ -102,11 +102,14 @@ public class GameControl {
             theGame.setTools(tools);
            
         }
-        
-        
+
         // method to display tools list
         public static void showToolsList() {
             System.out.println("showToolsList Method Called");
+            ArrayList<ListItem> tools = theGame.getTools();
+            for (ListItem item : tools) {
+                System.out.println(item.getName() + ": " + item.getNumber());
+            }
         }
         
         //create the list of provisions
@@ -127,8 +130,8 @@ public class GameControl {
         public static void showProvisionsList() {
             System.out.println("Provisions"); 
             ArrayList<ListItem> provisions = theGame.getProvisions();
-            for(int i = 0; i < provisions.size(); i++) {
-                System.out.println(provisions.get(i).getName() + ": " + provisions.get(i).getNumber()); 
+            for(ListItem item : provisions) {
+                System.out.println(item.getName() + ": " + item.getNumber()); 
             }
         }
         
@@ -137,8 +140,8 @@ public class GameControl {
             ArrayList<ListItem> provisionsList = theGame.getProvisions();
             System.out.println("Provisions"); 
             
-            for(int i = 0; i < provisionsList.size(); i++) {
-                System.out.println(provisionsList.get(i).getName() + ": " + provisionsList.get(i).getNumber()); 
+            for(ListItem item : provisionsList) {
+                System.out.println(item.getName() + ": " + item.getNumber()); 
             }
         }
         //create the Locations and the Map object 
