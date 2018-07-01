@@ -13,7 +13,7 @@ import model.*;
 
 /**
  *
- * @author
+ * @author jamesK mallory di bartolo
  */
 
 public class GameControl {
@@ -29,7 +29,6 @@ public class GameControl {
         //create the game object. Save it in the main driver file
         
         theGame = new Game();
-        
         
         //create the player object. Save it in the game object
         Player thePlayer = new Player();
