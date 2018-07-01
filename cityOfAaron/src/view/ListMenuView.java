@@ -85,5 +85,6 @@ public class ListMenuView extends MenuView {
     
     public void viewProvisions() {
         System.out.println("Option 4 Selected");
+        GameControl.showProvisionsList(); 
     }
 }
