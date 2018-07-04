@@ -81,18 +81,24 @@ public class CropControl {
     * - wheatInStore > price of new land
     * - population * 10 >= currentTotalLand + wantsToBuy
     */
-    public static int buyLand(int landPrice, int acresToBuy, CropData cropData) {
+    public static void buyLand(int landPrice, int acresToBuy, CropData cropData) {
         
         int totalPrice = acresToBuy * landPrice;
                 
         // if acresToBuy < 0, ERROR
-        if (acresToBuy < 0) { return -1; }
+        if (acresToBuy < 0) { 
+            throw new CropException("A negative value was input.");  
+        }
         
         // if wheatInStore < totalPrice, ERROR
-        if (cropData.getWheatInStore() < totalPrice) { return -1; }
+        if (cropData.getWheatInStore() < totalPrice) { 
+            throw new CropException("There is insufficient wheat to buy this much land."); 
+        }
         
         // if population <= (oldAcres + newAcres) / 10, ERROR
-        if ((cropData.getPopulation() * 10) < (cropData.getAcresOwned() + acresToBuy)) { return -1; }
+        if ((cropData.getPopulation() * 10) < (cropData.getAcresOwned() + acresToBuy)) { 
+            throw new CropException("The population isn't large enough to buy this much land.");  
+        }
         
         if (acresToBuy == 0) { return cropData.getAcresOwned(); }
         
@@ -104,7 +110,7 @@ public class CropControl {
             cropData.setWheatInStore(cropData.getWheatInStore() - totalPrice);
         
             // return new acresOwned Value
-            return cropData.getAcresOwned();
+            //return cropData.getAcresOwned();
         }
     }
 

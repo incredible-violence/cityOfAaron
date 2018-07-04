@@ -51,13 +51,27 @@ public class CropView {
         
         // get the cost of land for this round 
         int price = CropControl.calcLandPrice();
-        // prompt user to enter the number of acres to buy
+       
         System.out.format("Land is selling for %d bushels per acre.%n", price);
-        System.out.print("How many acres of land do you wish to buy?");
+        
         // get the user's input and save it
         int toBuy;
-        toBuy = keyboard.nextInt();
-        // call buyLand() in contol layer to actually buy the land
+        boolean paramsNotOkay; 
+        do {
+            paramsNotOkay = false;
+            System.out.print("How many acres of land do you wish to buy?");
+            toBuy = keyboard.nextInt();
+            try {
+                CropControl.buyLand(price, toBuy, cropData);
+            }
+            catch(CropException e) {
+                System.out.println("I am sorry master, I cannot do this."); 
+                System.out.println(e.getMessage());
+                paramsNotOkay = true; 
+            }
+       
+        } while(paramsNotOkay); 
+          // call buyLand() in contol layer to actually buy the land
         CropControl.buyLand(price, toBuy, cropData);
     }
     
