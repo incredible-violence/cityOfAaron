@@ -28,7 +28,7 @@ public class CropException extends Exception {
      * Returns: none
      */
    
-    public CropExceptions(String string) {
+    public CropException(String string) {
         super(string); 
     }
  
