@@ -9,6 +9,7 @@ package control;
 
 import model.CropData;
 import model.Game;
+import exceptions.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -112,6 +113,8 @@ public class CropControl {
             // return new acresOwned Value
             //return cropData.getAcresOwned();
         }
+        
+        // There needs to be a catch here
     }
 
     /**

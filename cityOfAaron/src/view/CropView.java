@@ -8,6 +8,7 @@ package view;
 
 import model.*;
 import control.*;
+import exceptions.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 
@@ -63,8 +64,10 @@ public class CropView {
             toBuy = keyboard.nextInt();
             try {
                 CropControl.buyLand(price, toBuy, cropData);
+                
+                // There needs to be a throw somewhere in here
             }
-            catch(CropException e) {
+            catch (CropException e) {
                 System.out.println("I am sorry master, I cannot do this."); 
                 System.out.println(e.getMessage());
                 paramsNotOkay = true; 
