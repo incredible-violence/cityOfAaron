@@ -56,16 +56,17 @@ public class CropView {
         System.out.format("Land is selling for %d bushels per acre.%n", price);
         
         // get the user's input and save it
-        int toBuy;
+        int toBuy = 0;
         boolean paramsNotOkay; 
         do {
-            paramsNotOkay = false;
-            System.out.print("How many acres of land do you wish to buy?");
-            toBuy = keyboard.nextInt();
             try {
+                paramsNotOkay = false;
+                System.out.print("How many acres of land do you wish to buy?");
+                toBuy = keyboard.nextInt();            
                 CropControl.buyLand(price, toBuy, cropData);
-                
-                // There needs to be a throw somewhere in here
+                if (toBuy == 1492) {
+                    throw new CropException("Columbus Sailed the Ocean Blue");
+                }
             }
             catch (CropException e) {
                 System.out.println("I am sorry master, I cannot do this."); 
