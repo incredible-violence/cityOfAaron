@@ -7,9 +7,7 @@
 package view;
 
 import java.util.Scanner;
-import cityofaaron.CityOfAaron;
 import control.GameControl;
-import model.*;
 
 /**
  *
@@ -78,13 +76,13 @@ public class ListMenuView extends MenuView {
     }
     
     public void viewTools() {
-        System.out.println("Option 3 Selected");
+        System.out.println("View Tools Selected");
         GameControl.showToolsList();
         
     }
     
     public void viewProvisions() {
-        System.out.println("Option 4 Selected");
+        System.out.println("Show Provisions Selected");
         GameControl.showProvisionsList(); 
     }
 }

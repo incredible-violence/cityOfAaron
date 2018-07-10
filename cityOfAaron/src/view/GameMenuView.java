@@ -7,7 +7,6 @@
 package view;
 
 import java.util.Scanner;
-import cityofaaron.CityOfAaron;
 import model.*;
 import control.*; 
 
@@ -18,8 +17,6 @@ import control.*;
 public class GameMenuView extends MenuView {
     
     Scanner keyboard = new Scanner(System.in);
-    private String gameMenu;
-    private int max;
     //Not sure about this line of code below: 
     Game theGame = new Game(); 
     

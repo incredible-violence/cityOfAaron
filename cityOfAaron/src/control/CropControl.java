@@ -11,7 +11,6 @@ import model.CropData;
 import model.Game;
 import exceptions.*;
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  *

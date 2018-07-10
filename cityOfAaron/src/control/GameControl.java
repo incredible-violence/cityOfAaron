@@ -232,7 +232,7 @@ public class GameControl {
         public void displayMap() {
             Game _game = CityOfAaron.getTheGame();
             Map theMap = _game.getTheMap(); 
-            System.out.println("Hi, I am the Map");
+            // DEBUG System.out.println("Hi, I am the Map");
             
             // for loop to display the 2D array Map
             for (int i = 0; i < MAX_ROW; ++i) {
@@ -246,8 +246,7 @@ public class GameControl {
                     }
                     else {
                         System.out.print(theMap.getLocation(i, j).getSymbol());
-                    }
-                    
+                    } 
                 }
                 System.out.println("");
             }
