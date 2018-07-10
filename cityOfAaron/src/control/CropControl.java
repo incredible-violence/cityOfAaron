@@ -134,20 +134,20 @@ public class CropControl {
      * - acres to sell must be greater or equal to acres owned
      */
     public static int sellLand(int landPrice, int acresToSell, CropData cropData) {
-        
+       try {
         // acresOwned Variable
         int acresOwned = cropData.getAcresOwned();
         
         // if acresToSell < 0, return -1
         if (acresToSell < 0)
-            return -1; 
+            throw new CropException("A negative value was input.");   
         
         // if acresToSell > acresOwned, return -1
         if (acresToSell > acresOwned)
-            return -1;
+            throw new CropException("You don't own enough land to sell that amount.");  
         
         // if pre-conditions are met, this code block is executed
-        
+        else {
         // acresOwned - acresToSell
         acresOwned -= acresToSell;
         
@@ -160,13 +160,18 @@ public class CropControl {
        
         // save result to wheatInStore
         cropData.setWheatInStore(wheatInStore);
-         
+        }
         // return acresOwned
         return cropData.getAcresOwned(); 
     }
-    
+       catch (CropException e) {
+            System.out.println("I cannot do that Dave");
+            System.out.println(e.getMessage());
+        }
+       return cropData.getAcresOwned(); 
+    }
     public static int setOffering(int percent, CropData cropData) {
-        
+       
         if (percent > 0) {
             int offering = (percent * cropData.getWheatInStore()) / 100;
             cropData.setOffering(offering);
@@ -193,24 +198,30 @@ public class CropControl {
     *  -wheatInStore > wheatForPeople
     */
     public static int feedPeople(int wheatForPeople, CropData cropData){
-        
+        try {
         int wheatInStore = cropData.getWheatInStore(); 
         
         if (wheatForPeople < 0) {
-            return -1;
+            throw new CropException("A negative value was input.");
         }
         
-        if (wheatForPeople < wheatInStore) {
+        
+        if (wheatInStore < wheatForPeople) {
+            throw new CropException("Sorry, you don't have enough wheat.");
+        }
+        
+         if (wheatForPeople < wheatInStore) {
             wheatInStore -= wheatForPeople; 
             cropData.setWheatInStore(wheatInStore);
             cropData.setWheatForPeople(wheatForPeople);
             return cropData.getWheatInStore();
         }
         
-        if (wheatInStore < wheatForPeople) {
-            return -1;
         }
-        
+        catch (CropException e) {
+            System.out.println("I cannot do that Dave");
+            System.out.println(e.getMessage());
+        }
         return 0;
     }
     
