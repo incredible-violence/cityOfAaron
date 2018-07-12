@@ -168,7 +168,15 @@ public class MainMenuView extends MenuView {
      * Returns: none
      */
     public void startSavedGame() {
-        System.out.println("Start Saved Game option Selected");
+        //System.out.println("Start Saved Game option Selected");
+        
+        //get rid of \n character left in the stream
+        
+        //prompt user to get a file path
+        
+        //call the getSavedGame() method in the GameControl class
+        
+        //display the game menu for the loaded game
     }
     
     /**
