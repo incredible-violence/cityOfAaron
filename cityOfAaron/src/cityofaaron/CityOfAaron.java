@@ -24,11 +24,11 @@ public class CityOfAaron {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) {      
         // TESTING MAINMENUVIEW CLASS
         MainMenuView mmv = new MainMenuView();
         mmv.displayMenu();
-        
+         
     }
 
     public static Game getTheGame() {

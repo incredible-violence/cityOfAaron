@@ -8,10 +8,7 @@
 package view;
 
 import java.util.Scanner;
-import cityofaaron.CityOfAaron;
-import model.*;
 import control.*; 
-
 
 /**
  *
@@ -20,8 +17,6 @@ import control.*;
 public class MainMenuView extends MenuView {
     
     Scanner keyboard = new Scanner(System.in);
-    private String theMenu;
-    private int max;
     
     /**
      * Constructor
@@ -43,8 +38,6 @@ public class MainMenuView extends MenuView {
                 5);
     }
     
-    
-    
     /**
      * Method: doAction
      * Purpose: performs selected option
@@ -59,7 +52,7 @@ public class MainMenuView extends MenuView {
             case 1:
                 startNewGame();
                 break;
-            // if option 2, call startExistingGame()
+            // if option 2, call startSavedGame()
             case 2:
                 startSavedGame();
                 break;
@@ -116,8 +109,64 @@ public class MainMenuView extends MenuView {
         GameMenuView gmv = new GameMenuView();
         gmv.displayMenu(); 
         
-        //********
-        // Create the new Game object
+        //******** CODE SNIPPET ONE HERE */
+        
+        }
+    
+    /**
+     * Method: startSavedGame
+     * Purpose: creates game object, starts game
+     * Parameters: none
+     * Returns: none
+     */
+    public void startSavedGame() {
+        System.out.println("Start Saved Game option Selected");
+        
+        Scanner input = new Scanner(System.in);    
+
+        // get rid of \n character left in the stream
+        input.nextLine();
+        // prompt user to get a file path
+        System.out.println("File path of the game wanted: ");
+        String fileName;
+        fileName = input.nextLine();
+        // call the getSavedGame() method in the GameControl class
+        GameControl gc = new GameControl();
+        gc.getSavedGame(fileName);
+
+        // display the game menu for the loaded game
+        GameMenuView gm = new GameMenuView();
+        gm.displayMenu();
+    }
+    
+    /**
+     * Method: displayHelpMenuView
+     * Purpose: moves user to the Help Menu
+     * Parameters: none
+     * Returns: none
+     */
+    public void displayHelpMenuView() {
+        System.out.println("Display Help Menu View option Selected");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
+        
+    }
+    
+    /**
+     * Method: displaySaveGameView
+     * Purpose: creates game object, starts game
+     * Parameters: none
+     * Returns: none
+     */
+    public void displaySaveGameView() {
+        System.out.println("Display Save Game View option Selected");
+        SaveGameView sg = new SaveGameView();
+        sg.displayMenu();
+    }
+}
+
+/* CODE SNIPPET ONE */
+// Create the new Game object
         //Game theGame = new Game();
         
         // Save a reference to it in the GameProject class
@@ -159,46 +208,3 @@ public class MainMenuView extends MenuView {
         
         // save
         //theGame.setCropData(cropData);
-        }
-    
-    /**
-     * Method: startSavedGame
-     * Purpose: creates game object, starts game
-     * Parameters: none
-     * Returns: none
-     */
-    public void startSavedGame() {
-        //System.out.println("Start Saved Game option Selected");
-        
-        //get rid of \n character left in the stream
-        
-        //prompt user to get a file path
-        
-        //call the getSavedGame() method in the GameControl class
-        
-        //display the game menu for the loaded game
-    }
-    
-    /**
-     * Method: displayHelpMenuView
-     * Purpose: moves user to the Help Menu
-     * Parameters: none
-     * Returns: none
-     */
-    public void displayHelpMenuView() {
-        System.out.println("Display Help Menu View option Selected");
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
-        
-    }
-    
-    /**
-     * Method: displaySaveGameView
-     * Purpose: creates game object, starts game
-     * Parameters: none
-     * Returns: none
-     */
-    public void displaySaveGameView() {
-        System.out.println("Display Save Game View option Selected");
-    }
-}

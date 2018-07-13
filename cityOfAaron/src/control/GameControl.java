@@ -9,6 +9,7 @@ package control;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.*;
 import cityofaaron.CityOfAaron;
 import model.*; 
 
@@ -25,6 +26,14 @@ public class GameControl {
     
     //reference to a Game object
     private static Game theGame; 
+
+    public static Game getTheGame() {
+        return theGame;
+    }
+
+    public static void setTheGame(Game theGame) {
+        GameControl.theGame = theGame;
+    }
     
     public static void createNewGame(String name) {
         //create the game object. Save it in the main driver file
@@ -44,7 +53,47 @@ public class GameControl {
              
     }
     
-    //create the CropData object
+    /**
+         * the getSavedGame method
+         * Purpose: load a saved game from disk
+         * Parameters: the file path
+         * Returns: none
+         * Side Effect: the game reference in the driver is updated
+         */
+        public static void getSavedGame(String filePath) {
+            Game theGame = null;
+            
+            try (FileInputStream fips = new FileInputStream(filePath)) {
+                ObjectInputStream input = new ObjectInputStream(fips);
+                theGame = (Game) input.readObject();
+                CityOfAaron.setTheGame(theGame);
+            }
+            catch (Exception e) {
+                System.out.println("There was an error reading the saved game file \n");
+            }
+        }
+        
+        /**
+         * the saveGame method
+         * Purpose: save a game to the disk
+         * Parameters: theGame, 
+         * Returns: none
+         *  
+         */
+        public static void saveGame(Game theGame, String filePath) {
+                       
+            try (FileOutputStream fops = new FileOutputStream(filePath)) {
+                ObjectOutputStream output = new ObjectOutputStream(fops); 
+                output.writeObject(theGame);
+                CityOfAaron.setTheGame(theGame);
+                output.close();
+            }
+            catch(Exception e) {
+                System.out.println("There was an error saving the game.");
+            }
+        }
+    
+        //create the CropData object
         
         public static void createCropDataObject() {
             CropData theCrops = new CropData();
@@ -252,47 +301,5 @@ public class GameControl {
             }
         }
         
-        /**
-         * the getSavedGame method
-         * Purpose: load a saved game from disk
-         * Parameters: the file path
-         * Returns: none
-         * Side Effect: the game reference in the driver is updated
-         */
         
-        public static void getSavedGame(String filePath) {
-            Game theGame = null;
-            
-            try(FileInputStream fips = new FileInputStream(filePath)) {
-                ObjectInputStream input = new ObjectInputStream(fips);
-                theGame = (Game) input.read(Object);
-                CityOfAaron.setCurrentGame(theGame);
-            }
-            catch(Exception e) {
-                System.out.println("There was an error reading the saved game file \n");
-            }
-        }
-        
-        /**
-         * the saveGame method
-         * Purpose: save a game to the disk
-         * Parameters: theGame, 
-         * Returns: none
-         *  
-         */
-        
-        public static void saveGame(Game theGame, String ) {
-            Game theGame = null;
-            
-            try(FileOutputStream fops = new FileOutputStream()) {
-                ObjectOutputStream output = new ObjectOutputStream(fops); 
-                theGame = (Game) output.writeObject(theGame);
-                CityOfAaron.setTheGame(theGame);
-            }
-            catch(Exception e) {
-                System.out.println("There was an error saving the game.");
-            }
-        }
-       
-   
 }

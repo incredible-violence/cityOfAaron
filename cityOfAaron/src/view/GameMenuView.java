@@ -12,7 +12,7 @@ import control.*;
 
 /**
  *
- * @author
+ * @author jamesk mallory di bartolo
  */
 public class GameMenuView extends MenuView {
     
