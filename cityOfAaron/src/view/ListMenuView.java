@@ -30,7 +30,8 @@ public class ListMenuView extends MenuView {
                 " 2 - View a list of animals\n" +
                 " 3 - View a list of tools\n" + 
                 " 4 - View a list of provisions\n" + 
-                " 5 - Return to the game menu\n",
+                " 5 - Save a list of animals to local disk." +
+                " 6 - Return to the game menu\n",
                 5);    
     }
     
@@ -60,8 +61,12 @@ public class ListMenuView extends MenuView {
             case 4:
                 viewProvisions();
                 break;
+            // if option 5, call saveAnimals()
+            case 5: 
+                saveAnimals(); 
+                break;
             // if option 5, display goodbye message
-            case 5:
+            case 6:
                 System.out.println("Thanks for playing! Goodbye =D\n");
         }
     }
@@ -84,5 +89,11 @@ public class ListMenuView extends MenuView {
     public void viewProvisions() {
         System.out.println("Show Provisions Selected");
         GameControl.showProvisionsList(); 
+    }
+    
+    public void saveAnimals() {
+        System.out.println("Save Animal List Selected");
+        GameControl.saveAnimalList(); 
+        
     }
 }
