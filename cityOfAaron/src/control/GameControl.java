@@ -203,7 +203,7 @@ public class GameControl {
             System.out.println("Please enter a file path for the animals list: ");
             listPath = keyboard.next();
             
-            FileWriter outFile = null; 
+            
             //declare a reference to a PrintWriter object
             try (PrintWriter out = new PrintWriter(listPath);) {
                 //create the PrintWriter object
@@ -226,16 +226,7 @@ public class GameControl {
                 //output error message
                 System.out.println("Error saving list to file.");
             }
-            finally {
-                if(outFile != null) {
-                    try {
-                        outFile.close(); 
-                    } catch (Exception e) {
-                        System.out.println("Error closing the file"); 
-                    }
-                }
-                
-            }
+            
         } 
          
         //create the Locations and the Map object 
