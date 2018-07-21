@@ -81,17 +81,17 @@ public class MainMenuView extends MenuView {
         //Show banner page
         System.out.println(
         "***********************************************************\n" +
-        "* Welcome to the City of Aaron. You have been summoned *\n" +
-        "* by the High Priest to assume your role as ruler of *\n" +
-        "* the city. Your responsibility is to buy land, sell *\n" +
-        "* land, determine how much wheat to plant each year, *\n" +
-        "* and how much to set aside to feed the people. You *\n" +
-        "* will also be required to pay an annual tithe on the *\n" +
-        "* wheat that is harvested. If you fail to provide *\n" +
-        "* enough wheat for the people to eat, people will die *\n" +
-        "* and your workforce will be diminished. Plan very *\n" +
-        "* carefully or you may find yourself in trouble with *\n" +
-        "* the people. And oh, watch out for plagues and rats! *\n" +
+        "* Welcome to the City of Aaron. You have been summoned *\n"    +
+        "* by the High Priest to assume your role as ruler of *\n"      +
+        "* the city. Your responsibility is to buy land, sell *\n"      +
+        "* land, determine how much wheat to plant each year, *\n"      +
+        "* and how much to set aside to feed the people. You *\n"       +
+        "* will also be required to pay an annual tithe on the *\n"     +
+        "* wheat that is harvested. If you fail to provide *\n"         +
+        "* enough wheat for the people to eat, people will die *\n"     +
+        "* and your workforce will be diminished. Plan very *\n"        +
+        "* carefully or you may find yourself in trouble with *\n"      +
+        "* the people. And oh, watch out for plagues and rats! *\n"     +
         "***********************************************************/n");
         
         // Prompt for and get the user's name

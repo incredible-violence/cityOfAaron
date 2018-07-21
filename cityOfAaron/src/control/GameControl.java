@@ -50,6 +50,9 @@ public class GameControl {
         Map newMap = createMap();
         theGame.setTheMap(newMap);
         
+        // FOR TESTING PURPOSES - create a default AnimalsList
+        createAnimalList();
+        
         CityOfAaron.setTheGame(theGame); 
              
     }
