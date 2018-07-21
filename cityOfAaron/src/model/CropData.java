@@ -16,6 +16,25 @@ import java.io.Serializable;
 
 public class CropData implements Serializable {
     
+      // variables
+    
+    private int year;
+    private int population;
+    private int acresOwned;
+    private int cropYield;
+    private int wheatInStore;
+    private int numberWhoDied;
+    private int newPeople;
+    private int harvest;
+    private int harvestAfterOffering;
+    private int offering;
+    private int offeringBushels;
+    private int peopleFed;
+    private int acresPlanted;
+    private int numStarved;
+    private int eatenByRats;
+    private int wheatForPeople;
+    
     // constructors
     
     // default constructor
@@ -42,24 +61,7 @@ public class CropData implements Serializable {
         this.wheatForPeople = wheatForPeople;
     }
     
-    // variables
-    
-    private int year;
-    private int population;
-    private int acresOwned;
-    private int cropYield;
-    private int wheatInStore;
-    private int numberWhoDied;
-    private int newPeople;
-    private int harvest;
-    private int harvestAfterOffering;
-    private int offering;
-    private int offeringBushels;
-    private int peopleFed;
-    private int acresPlanted;
-    private int numStarved;
-    private int eatenByRats;
-    private int wheatForPeople;
+  
     
     // getters and setters
 

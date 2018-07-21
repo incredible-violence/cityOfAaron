@@ -35,11 +35,14 @@ public class CropView {
      * Returns: none
      */
     public static void runCropsView() {
-        
+        cropReportView(); 
         // call buyLandView
-        buyLandView();
+        //buyLandView();
         
         // other cropView methods as they become relevant
+        
+        //sellLandView(); 
+       
     }
     
     /**
@@ -184,5 +187,20 @@ public class CropView {
                 ok = true;
             }
         } while (ok);
+    }
+    
+    public static void cropReportView() {
+        System.out.println("Crop Report View"); 
+        //int year = cropData.getYear(); 
+        //int acresOwned = cropData.getAcresOwned(); 
+        //int wheatInStore = cropData.getWheatInStore();
+        //int population = cropData.getPopulation(); 
+        
+        
+        //System.out.format("The year is %d. %n", year); 
+        //System.out.format("You own %d acres of land.%n", acresOwned); 
+        //System.out.format("There are %d bushels of wheat in store.%n", wheatInStore); 
+        //System.out.format("The population is %d people.%n", population); 
+        
     }
 }
