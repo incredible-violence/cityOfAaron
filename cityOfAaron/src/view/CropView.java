@@ -184,7 +184,7 @@ public class CropView {
                 }
                 //plant the crops
                 CropControl.plantCrops(landToPlant, cropData); 
-            }
+             }
             catch (CropException e) {
                 System.out.println(e.getMessage());
                 ok = true;
