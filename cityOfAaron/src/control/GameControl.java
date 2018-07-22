@@ -53,6 +53,9 @@ public class GameControl {
         // FOR TESTING PURPOSES - create a default AnimalsList
         createAnimalList();
         
+        // FOR TESTING PURPOSES - create a default CropData set
+        createCropDataObject();
+        
         CityOfAaron.setTheGame(theGame); 
              
     }
