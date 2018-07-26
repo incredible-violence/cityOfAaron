@@ -26,9 +26,9 @@ public class Game implements Serializable {
     private Map theMap;
     private Player thePlayer;
     private CropData cropdata;
-    private ArrayList<ListItem> animals = new ArrayList<ListItem>();
-    private ArrayList<ListItem> tools = new ArrayList<ListItem>();
-    private ArrayList<ListItem> provisions = new ArrayList<ListItem>();
+    private ArrayList<ListItem> animals;
+    private ArrayList<ListItem> tools;
+    private ArrayList<ListItem> provisions;
     private Boolean done;
     
     private CropData cropData = null;
@@ -43,15 +43,24 @@ public class Game implements Serializable {
     
     // default constructor 
     public Game() {
+        this.provisions = new ArrayList<>();
+        this.tools = new ArrayList<>();
+        this.animals = new ArrayList<>();
     }
     
     // argument constructor
     public Game(Player thePlayer) {    
+        this.provisions = new ArrayList<>();
+        this.tools = new ArrayList<>();
+        this.animals = new ArrayList<>();
         this.thePlayer = thePlayer;
     }
     
     // variable constructor
     public Game(Map theMap, Player thePlayer, CropData cropdata, Boolean done) {
+        this.provisions = new ArrayList<>();
+        this.tools = new ArrayList<>();
+        this.animals = new ArrayList<>();
         this.theMap = theMap;
         this.thePlayer = thePlayer;
         this.cropdata = cropdata;
